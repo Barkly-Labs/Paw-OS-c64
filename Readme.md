@@ -11,6 +11,7 @@ PAW Synth is launched from the existing terminal and returns to it when closed.
 - `ABOUT` — PAW OS information and theme
 - `CLS` — redraw the terminal
 - `SYNTH` — open PAW Synth
+<<<<<<< HEAD
 - `DISK` / `DISK 8` — show device status / select IEC device 8–11
 - `DIR` or `FILES` — open the PAW Files directory browser
 - `PWD` / `CD ..` — show the disk device's root context
@@ -18,6 +19,8 @@ PAW Synth is launched from the existing terminal and returns to it when closed.
 - `DELETE filename` — ask for confirmation, then scratch a file
 - `RENAME old new` — rename a file on the active device
 - `LOAD`, `RUN`, `SAVE`, `COPY` — report the safe-operation boundary
+=======
+>>>>>>> b5800ffa93ad7f862755c01629bb8cbec9eae056
 - `PHONE` — telephone command help
 - `DTMF 5551234` — generate DTMF tones through SID voices 1 and 2
 - `DTMFTEST` — play all 16 DTMF keypad pairs through the SID
@@ -90,6 +93,7 @@ an external modem. The serial backend is intentionally not claimed as working
 until the exact adapter and modem are known. The modem, not the SID, performs
 carrier negotiation and data transfer.
 
+<<<<<<< HEAD
 ## PAW Disk and PAW Files
 
 PAW Disk uses cc65's Commodore KERNAL/IEC file interfaces (`cbm.h`), DOS
@@ -129,6 +133,8 @@ image or IEC drive. The current build environment did not include cc65 or VICE,
 so the PRG in the archive remains the supplied snapshot binary; it does not
 contain the new disk subsystem.
 
+=======
+>>>>>>> b5800ffa93ad7f862755c01629bb8cbec9eae056
 The DTMF generator configures both SID voice envelopes, enables triangle-wave
 output on both voices, and uses paired NTSC SID tuning words. `FAST` uses a
 shorter tone and gap. The frequency table is calibrated for a nominal NTSC C64;

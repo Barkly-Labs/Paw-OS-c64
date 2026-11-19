@@ -5,8 +5,11 @@
 #include "paw.h"
 #include "paw_phone.h"
 #include "paw_synth.h"
+<<<<<<< HEAD
 #include "paw_disk.h"
 #include "paw_files.h"
+=======
+>>>>>>> b5800ffa93ad7f862755c01629bb8cbec9eae056
 
 static void run_phone_command(char *command)
 {
@@ -156,6 +159,7 @@ void execute_command(char *command)
     else if (strcmp(command, "ABOUT") == 0) show_about();
     else if (strcmp(command, "CLS") == 0) draw_screen();
     else if (strcmp(command, "SYNTH") == 0) paw_synth_run();
+<<<<<<< HEAD
     else if (strcmp(command, "DIR") == 0 || strcmp(command, "FILES") == 0)
         paw_files_run();
     else if (strcmp(command, "DISK") == 0) show_disk_status();
@@ -191,6 +195,8 @@ void execute_command(char *command)
         show_safe_loader_limit("SAVE NEEDS A DEFINED SOURCE REGION");
     else if (strcmp(command, "COPY") == 0 || strncmp(command, "COPY ", 5) == 0)
         show_safe_loader_limit("COPY IS NOT ENABLED IN THIS BUILD");
+=======
+>>>>>>> b5800ffa93ad7f862755c01629bb8cbec9eae056
     else if (strcmp(command, "DTMFTEST") == 0) phone_dtmf_test();
     else if (strncmp(command, "DTMF ", 5) == 0) run_phone_command(command + 5);
     else if (strncmp(command, "DIAL ", 5) == 0) run_phone_command(command + 5);
