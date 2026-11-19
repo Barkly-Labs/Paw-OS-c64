@@ -10,6 +10,68 @@
 
 #define SCREEN_WIDTH 40
 
+/* SID voice 1 registers */
+#define SID_FREQ_LO  (*(volatile unsigned char*)0xD400)
+#define SID_FREQ_HI  (*(volatile unsigned char*)0xD401)
+#define SID_CONTROL  (*(volatile unsigned char*)0xD404)
+#define SID_ATTACK   (*(volatile unsigned char*)0xD405)
+#define SID_SUSTAIN  (*(volatile unsigned char*)0xD406)
+#define SID_VOLUME   (*(volatile unsigned char*)0xD418)
+
+/* NTSC SID frequency values */
+#define NOTE_C5  8584
+#define NOTE_D5  9634
+#define NOTE_E5  10814
+#define NOTE_E4  5407
+#define NOTE_F4  5728
+#define NOTE_G4  6430
+
+void play_ode_to_joy(void)
+{
+    static const unsigned int melody[] = {
+        NOTE_E4, NOTE_E4, NOTE_F4, NOTE_G4,
+        NOTE_G4, NOTE_F4, NOTE_E4, NOTE_D5 / 2,
+        NOTE_C5 / 2, NOTE_C5 / 2, NOTE_D5 / 2,
+        NOTE_E4, NOTE_E4, NOTE_D5 / 2, NOTE_D5 / 2,
+        NOTE_E4
+    };
+
+    unsigned char i;
+    unsigned char repeat;
+    unsigned char frame;
+
+    /* Configure SID voice 1 */
+    SID_CONTROL = 0;
+    SID_ATTACK = 0x02;
+    SID_SUSTAIN = 0xF8;
+    SID_VOLUME = 15;
+
+    for (repeat = 0; repeat < 4; repeat++) {
+
+        for (i = 0; i < 16; i++) {
+
+            SID_FREQ_LO = melody[i] & 0xFF;
+            SID_FREQ_HI = melody[i] >> 8;
+
+            SID_CONTROL = 0x11; /* Triangle wave + gate */
+
+            /* Approximately 28 frames per note */
+            for (frame = 0; frame < 28; frame++) {
+                waitvsync();
+            }
+        }
+    }
+
+    /* Turn off the SID voice */
+    SID_CONTROL = 0x10;
+
+    for (frame = 0; frame < 30; frame++) {
+        waitvsync();
+    }
+
+    SID_VOLUME = 0;
+}
+
 void rainbow(void)
 {
     unsigned char colors[] = {
@@ -25,7 +87,9 @@ void rainbow(void)
 
     for (i = 0; i < 8; i++) {
         textcolor(colors[i]);
-        cputs("█");
+        cputc(18);   // Reverse video ON
+        cputc(' ');  // Solid colored square
+        cputc(146);  // Reverse video OFF
     }
 }
 
@@ -90,6 +154,8 @@ void show_about(void)
 {
 
     clrscr();
+    play_ode_to_joy();
+    
     textcolor(COLOR_WHITE);
 
     gotoxy(2, 21);
