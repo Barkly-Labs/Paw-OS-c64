@@ -1,26 +1,39 @@
 
 #include <conio.h>
-#include <stdio.h>
 
 int main(void)
 {
     clrscr();
 
+    bgcolor(COLOR_BLUE);
+    bordercolor(COLOR_BLUE);
     textcolor(COLOR_LIGHTRED);
-    cprintf("********************************\n");
-    cprintf("*                              *\n");
-    cprintf("*          PAW OS              *\n");
-    cprintf("*                              *\n");
-    cprintf("*   BARKLY LABS C64 EDITION    *\n");
-    cprintf("*                              *\n");
-    cprintf("********************************\n\n");
+
+    gotoxy(5, 2);
+    cputs("********************************");
+
+    gotoxy(10, 5);
+    cputs("PAW OS");
+
+    gotoxy(5, 7);
+    cputs("BARKLY LABS C64 EDITION");
+
+    gotoxy(5, 9);
+    cputs("********************************");
 
     textcolor(COLOR_WHITE);
-    cprintf("6510 PROCESSOR: ONLINE\n");
-    cprintf("64 KB MEMORY: READY\n");
-    cprintf("PAW SYSTEM: INITIALIZING\n\n");
 
-    cprintf("PRESS ANY KEY TO CONTINUE...");
+    gotoxy(5, 13);
+    cputs("6510 PROCESSOR: READY");
+
+    gotoxy(5, 15);
+    cputs("64 KB MEMORY: READY");
+
+    gotoxy(5, 17);
+    cputs("PAW SYSTEM: ONLINE");
+
+    gotoxy(5, 21);
+    cputs("PRESS ANY KEY TO CONTINUE");
 
     cgetc();
 
