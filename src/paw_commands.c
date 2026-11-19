@@ -2,6 +2,7 @@
 #include <string.h>
 #include "paw.h"
 #include "paw_phone.h"
+#include "paw_synth.h"
 
 static void run_phone_command(char *command)
 {
@@ -40,6 +41,8 @@ void execute_command(char *command)
     }
     else if (strcmp(command, "ABOUT") == 0) show_about();
     else if (strcmp(command, "CLS") == 0) draw_screen();
+    else if (strcmp(command, "SYNTH") == 0) paw_synth_run();
+    else if (strcmp(command, "DTMFTEST") == 0) phone_dtmf_test();
     else if (strncmp(command, "DTMF ", 5) == 0) run_phone_command(command + 5);
     else if (strncmp(command, "DIAL ", 5) == 0) run_phone_command(command + 5);
     else if (strcmp(command, "PHONE") == 0) phone_help();

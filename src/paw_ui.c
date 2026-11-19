@@ -59,6 +59,8 @@ void show_help(void)
 
     gotoxy(2, 22);
     cputs("HELP MEM ABOUT CLS PHONE DIAL MODEM");
+    gotoxy(2, 23);
+    cputs("DTMF number [FAST] DTMFTEST SYNTH");
 }
 
 void show_about(void)
