@@ -18,12 +18,11 @@ void rainbow(void)
 
     for (i = 0; i < 8; i++) {
         textcolor(colors[i]);
-        cputc(18);   // Reverse video ON
-        cputc(' ');  // Solid colored square
-        cputc(146);  // Reverse video OFF
+        revers(1);
+        cputc(' ');
+        revers(0);
     }
 }
-
 void paw_logo(void)
 {
     textcolor(COLOR_LIGHTRED);
@@ -88,10 +87,10 @@ void show_about(void)
     /* Description */
     textcolor(COLOR_WHITE);
     gotoxy(3, 11);
-    cputs("A SMART TERMINAL FOR THE C64");
+    cputs("A Smol OS for the c 64 / 6510");
 
     gotoxy(5, 13);
-    cputs("BUILT FOR COMMUNICATION");
+    cputs("BUILT WITH BARKLY LABS C64 SDK");
 
     /* Creator credits */
     textcolor(COLOR_LIGHTRED);
