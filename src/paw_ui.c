@@ -180,14 +180,8 @@ static void draw_home_screen(unsigned char animate)
     textcolor(COLOR_LIGHTGREEN);
     gotoxy(2, 17); cputs("TERMINAL: READY");
     gotoxy(2, 18); cputs("SID SOUND: READY");
-
-    textcolor(COLOR_LIGHTGREEN);
-    gotoxy(2, 21); cputs("READY.");
     textcolor(COLOR_WHITE);
-    gotoxy(2, 22); cputs("TYPE HELP FOR COMMANDS");
-
-    gotoxy(2, 24);
-    cputs("PAW>");
+    gotoxy(2, 20); cputs("TYPE HELP FOR COMMANDS");
 }
 
 void boot_screen(void)
