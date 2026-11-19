@@ -154,7 +154,7 @@ static void draw_home_screen(unsigned char animate)
     clrscr();
 
     BORDER = COLOR_PURPLE;
-    BACKGROUND = COLOR_BLUE;
+    BACKGROUND = COLOR_BLACK;
 
     paw_logo();
     textcolor(COLOR_CYAN);
@@ -180,8 +180,6 @@ static void draw_home_screen(unsigned char animate)
     textcolor(COLOR_LIGHTGREEN);
     gotoxy(2, 17); cputs("TERMINAL: READY");
     gotoxy(2, 18); cputs("SID SOUND: READY");
-    textcolor(COLOR_CYAN);
-    gotoxy(2, 19); cputs("IEC DEVICE: 8 (ON DEMAND)");
 
     textcolor(COLOR_LIGHTGREEN);
     gotoxy(2, 21); cputs("READY.");
