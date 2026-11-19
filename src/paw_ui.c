@@ -57,17 +57,11 @@ void show_help(void)
     cputs("COMMANDS");
 
     gotoxy(2, 22);
-<<<<<<< HEAD
     cputs("HELP MEM ABOUT CLS DISK DIR FILES PWD");
     gotoxy(2, 23);
     cputs("CD TYPE DELETE RENAME PHONE DTMF DIAL");
     gotoxy(2, 24);
     cputs("DTMFTEST MODEM SYNTH");
-=======
-    cputs("HELP MEM ABOUT CLS PHONE DIAL MODEM");
-    gotoxy(2, 23);
-    cputs("DTMF number [FAST] DTMFTEST SYNTH");
->>>>>>> b5800ffa93ad7f862755c01629bb8cbec9eae056
 }
 
 void show_about(void)
