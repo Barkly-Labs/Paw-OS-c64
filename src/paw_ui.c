@@ -92,8 +92,9 @@ void clear_output(void)
 
 void show_help(void)
 {
+    clrscr();
     textcolor(COLOR_CYAN);
-
+    
     gotoxy(2, 21);
     cputs("COMMANDS");
 
@@ -168,11 +169,11 @@ static void draw_home_screen(unsigned char animate)
     cputs("PAW OS");
 
     textcolor(COLOR_WHITE);
-    gotoxy(9, 11);
+    gotoxy(9, 12);
     cputs("BARKLY LABS C64 EDITION");
 
     /* The subtitle is on row 11; startup status begins below it. */
-    gotoxy(2, 12);
+    gotoxy(2, 14);
     cputs("PAW OS SYSTEM STATUS                  ");
 
     show_memory();

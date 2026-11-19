@@ -12,9 +12,9 @@ void show_memory(void)
 
     textcolor(COLOR_WHITE);
 
-    gotoxy(2, 14);
+    gotoxy(2, 15);
     cprintf("FREE HEAP: %u BYTES   ", total);
 
-    gotoxy(2, 15);
+    gotoxy(2, 16);
     cprintf("LARGEST BLOCK: %u BYTES   ", largest);
 }
