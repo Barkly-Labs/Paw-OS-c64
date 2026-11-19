@@ -153,19 +153,54 @@ void show_help(void)
 void show_about(void)
 {
 
+   void show_about(void)
+{
     clrscr();
-    play_ode_to_joy();
-    
+
+    BORDER = COLOR_PURPLE;
+    BACKGROUND = COLOR_BLACK;
+
+    /* PAW logo and rainbow header */
+    paw_logo();
+    rainbow();
+
+    /* Main title */
+    textcolor(COLOR_LIGHTRED);
+    gotoxy(14, 6);
+    cputs("PAW OS");
+
+    textcolor(COLOR_CYAN);
+    gotoxy(13, 8);
+    cputs("ABOUT");
+
+    /* Description */
     textcolor(COLOR_WHITE);
+    gotoxy(3, 11);
+    cputs("A SMART TERMINAL FOR THE C64");
 
-    gotoxy(2, 21);
-    cputs("PAW OS - BARKLY LABS");
+    gotoxy(5, 13);
+    cputs("BUILT FOR COMMUNICATION");
 
-    gotoxy(2, 22);
+    /* Creator credits */
+    textcolor(COLOR_LIGHTRED);
+    gotoxy(13, 16);
+    cputs("CREATED BY");
+
+    textcolor(COLOR_YELLOW);
+    gotoxy(10, 18);
+    cputs("BARKLY LABS");
+
+    textcolor(COLOR_WHITE);
+    gotoxy(8, 20);
+    cputs("PIPER MAE BARKLY");
+
+    /* Hardware information */
+    textcolor(COLOR_CYAN);
+    gotoxy(8, 23);
     cputs("COMMODORE 64 / 6510");
 
-    gotoxy(2, 23);
-    cputs("PEOPLE ARE WORTH DESIGNING FOR");
+    /* Play the PAW OS theme */
+    play_ode_to_joy();
 }
 
 void draw_screen(void)
