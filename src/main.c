@@ -1,5 +1,4 @@
 
-
 #include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,17 +8,15 @@
 #define BORDER (*(unsigned char*)0xD020)
 #define BACKGROUND (*(unsigned char*)0xD021)
 
+#define SCREEN_WIDTH 40
+
 void rainbow(void)
 {
     unsigned char colors[] = {
-        COLOR_RED,
-        COLOR_ORANGE,
-        COLOR_YELLOW,
-        COLOR_GREEN,
-        COLOR_CYAN,
-        COLOR_BLUE,
-        COLOR_PURPLE,
-        COLOR_LIGHTRED
+        COLOR_RED, COLOR_ORANGE,
+        COLOR_YELLOW, COLOR_GREEN,
+        COLOR_CYAN, COLOR_BLUE,
+        COLOR_PURPLE, COLOR_LIGHTRED
     };
 
     unsigned char i;
@@ -66,24 +63,41 @@ void show_memory(void)
     cprintf("LARGEST BLOCK: %u BYTES   ", largest);
 }
 
+void clear_output(void)
+{
+    unsigned char row;
+
+    textcolor(COLOR_WHITE);
+
+    for (row = 21; row <= 23; row++) {
+        gotoxy(2, row);
+        cputs("                                      ");
+    }
+}
+
 void show_help(void)
 {
     textcolor(COLOR_CYAN);
 
-    cputs("\nAVAILABLE COMMANDS\n");
-    cputs("------------------\n");
-    cputs("HELP  - COMMAND LIST\n");
-    cputs("MEM   - MEMORY STATUS\n");
-    cputs("CLS   - CLEAR SCREEN\n");
-    cputs("ABOUT - SYSTEM INFO\n");
+    gotoxy(2, 21);
+    cputs("AVAILABLE COMMANDS");
+
+    gotoxy(2, 22);
+    cputs("HELP  MEM  ABOUT  CLS");
 }
 
 void show_about(void)
 {
-    cputs("\nPAW OS - BARKLY LABS\n");
-    cputs("C64 EDITION\n");
-    cputs("PEOPLE ARE WORTH DESIGNING FOR\n");
-    cputs("TARGET: COMMODORE 64 / 6510\n");
+    textcolor(COLOR_WHITE);
+
+    gotoxy(2, 21);
+    cputs("PAW OS - BARKLY LABS");
+
+    gotoxy(2, 22);
+    cputs("COMMODORE 64 / 6510");
+
+    gotoxy(2, 23);
+    cputs("PEOPLE ARE WORTH DESIGNING FOR");
 }
 
 void draw_screen(void)
@@ -107,19 +121,47 @@ void draw_screen(void)
     gotoxy(2, 11);
     cputs("------------------------------------");
 
+    show_memory();
+
     gotoxy(2, 18);
     cputs("------------------------------------");
 
     textcolor(COLOR_LIGHTRED);
-    gotoxy(2, 20);
+    gotoxy(2, 19);
     cputs("PAW OS COMMAND INTERPRETER");
 
     textcolor(COLOR_WHITE);
-    gotoxy(2, 22);
+    gotoxy(2, 20);
     cputs("TYPE HELP FOR COMMANDS");
 
     gotoxy(2, 24);
     cputs("PAW>");
+}
+
+void execute_command(char *command)
+{
+    clear_output();
+
+    if (strcmp(command, "HELP") == 0) {
+        show_help();
+    }
+    else if (strcmp(command, "MEM") == 0) {
+        show_memory();
+        textcolor(COLOR_CYAN);
+        gotoxy(2, 21);
+        cputs("MEMORY STATUS UPDATED");
+    }
+    else if (strcmp(command, "ABOUT") == 0) {
+        show_about();
+    }
+    else if (strcmp(command, "CLS") == 0) {
+        draw_screen();
+    }
+    else if (command[0] != '\0') {
+        textcolor(COLOR_LIGHTRED);
+        gotoxy(2, 21);
+        cputs("UNKNOWN COMMAND");
+    }
 }
 
 int main(void)
@@ -130,49 +172,38 @@ int main(void)
 
     draw_screen();
 
-    show_memory();
-
     while (1) {
-        gotoxy(6, 24);
-        cputs("                    ");
+
+        gotoxy(2, 24);
+        cputs("PAW>                  ");
         gotoxy(6, 24);
 
         length = 0;
+        command[0] = '\0';
 
         while (1) {
-           ch = cgetc();
+            ch = cgetc();
 
             if (ch == 13) {
-                cputs("\nENTER DETECTED!");
                 command[length] = '\0';
                 break;
             }
 
-            if (ch >= 32 && ch <= 126 &&
-                length < sizeof(command) - 1) {
+            if (ch == 20 && length > 0) {
+                length--;
+                command[length] = '\0';
+                cputc(20);
+            }
+            else if (ch >= 32 && ch <= 126 &&
+                     length < sizeof(command) - 1) {
+
                 ch = toupper(ch);
                 command[length++] = ch;
                 cputc(ch);
             }
         }
 
-        if (strcmp(command, "HELP") == 0) {
-            show_help();
-        }
-        else if (strcmp(command, "MEM") == 0) {
-            show_memory();
-        }
-        else if (strcmp(command, "ABOUT") == 0) {
-            show_about();
-        }
-        else if (strcmp(command, "CLS") == 0) {
-            draw_screen();
-            show_memory();
-        }
-        else if (command[0] != '\0') {
-            textcolor(COLOR_LIGHTRED);
-            cputs("\nUNKNOWN COMMAND\n");
-        }
+        execute_command(command);
     }
 
     return 0;
