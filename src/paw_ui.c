@@ -55,10 +55,14 @@ void show_help(void)
     textcolor(COLOR_CYAN);
 
     gotoxy(2, 21);
-    cputs("AVAILABLE COMMANDS");
+    cputs("COMMANDS");
 
     gotoxy(2, 22);
-    cputs("HELP MEM ABOUT CLS PHONE DIAL MODEM");
+    cputs("HELP MEM ABOUT CLS DISK DIR FILES PWD");
+    gotoxy(2, 23);
+    cputs("CD TYPE DELETE RENAME PHONE DTMF DIAL");
+    gotoxy(2, 24);
+    cputs("DTMFTEST MODEM SYNTH");
 }
 
 void show_about(void)
