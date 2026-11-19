@@ -8,6 +8,7 @@ void show_memory(void);
 void clear_output(void);
 void show_help(void);
 void show_about(void);
+void boot_screen(void);
 void draw_screen(void);
 void execute_command(char *command);
 

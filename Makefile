@@ -8,6 +8,9 @@ SOURCES = src/main.c \
           src/paw_sid.c \
           src/paw_dtmf.c \
           src/paw_phone.c \
+          src/paw_synth.c \
+          src/paw_disk.c \
+          src/paw_files.c \
           src/paw_commands.c
 
 .PHONY: all clean

@@ -11,7 +11,7 @@ int main(void)
     unsigned char length;
     unsigned char ch;
 
-    draw_screen();
+    boot_screen();
 
     while (1) {
 
