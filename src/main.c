@@ -1,4 +1,5 @@
 
+
 #include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -90,7 +91,7 @@ void draw_screen(void)
     clrscr();
 
     BORDER = COLOR_PURPLE;
-    BACKGROUND = COLOR_GRAY1;
+    BACKGROUND = COLOR_BLACK;
 
     paw_logo();
     rainbow();
@@ -139,17 +140,12 @@ int main(void)
         length = 0;
 
         while (1) {
-            ch = cgetc();
+           ch = cgetc();
 
             if (ch == 13) {
+                cputs("\nENTER DETECTED!");
                 command[length] = '\0';
                 break;
-            }
-
-            if (ch == 20 && length > 0) {
-                length--;
-                cputc(20);
-                continue;
             }
 
             if (ch >= 32 && ch <= 126 &&
