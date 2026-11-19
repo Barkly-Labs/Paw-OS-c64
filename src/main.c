@@ -150,9 +150,6 @@ void show_help(void)
     cputs("HELP  MEM  ABOUT  CLS");
 }
 
-void show_about(void)
-{
-
    void show_about(void)
 {
     clrscr();
