@@ -25,7 +25,7 @@ void rainbow(void)
 
     for (i = 0; i < 8; i++) {
         textcolor(colors[i]);
-        cputs("[]");
+        cputs("█");
     }
 }
 
@@ -88,6 +88,8 @@ void show_help(void)
 
 void show_about(void)
 {
+
+    clrscr();
     textcolor(COLOR_WHITE);
 
     gotoxy(2, 21);
