@@ -64,7 +64,8 @@ static void draw_files_screen(void)
 
     clrscr();
     BORDER = COLOR_PURPLE;
-    BACKGROUND = COLOR_BLUE;
+    BACKGROUND = COLOR_BLACK;
+
     textcolor(COLOR_YELLOW);
     gotoxy(14, 1); cputs("PAW FILES");
     textcolor(COLOR_CYAN);

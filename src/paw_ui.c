@@ -63,7 +63,6 @@ void rainbow(void)
     revers(0);
     textcolor(COLOR_WHITE);
 }
-
 void paw_logo(void)
 {
     textcolor(COLOR_LIGHTRED);
@@ -128,12 +127,6 @@ void show_about(void)
 
     /* Description */
     textcolor(COLOR_WHITE);
-    gotoxy(5, 14);
-    cputs("A SMART TERMINAL FOR THE C64");
-
-    gotoxy(5, 16);
-    cputs("BUILT FOR COMMUNICATION");
-
     /* Creator credits */
     textcolor(COLOR_LIGHTRED);
     gotoxy(15, 18);
@@ -161,7 +154,7 @@ static void draw_home_screen(unsigned char animate)
     clrscr();
 
     BORDER = COLOR_PURPLE;
-    BACKGROUND = COLOR_BLACK;
+    BACKGROUND = COLOR_BLUE;
 
     paw_logo();
     textcolor(COLOR_CYAN);
