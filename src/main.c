@@ -90,7 +90,7 @@ void draw_screen(void)
     clrscr();
 
     BORDER = COLOR_PURPLE;
-    BACKGROUND = COLOR_BLUE;
+    BACKGROUND = COLOR_GRAY1;
 
     paw_logo();
     rainbow();
