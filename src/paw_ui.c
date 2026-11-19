@@ -52,10 +52,16 @@ void rainbow(void)
     unsigned char j;
 
     for (i = 0; i < 8; i++) {
+<<<<<<< HEAD
         gotoxy(RAINBOW_X, (unsigned char)(RAINBOW_Y + i));
         textcolor(rainbow_colors[i]);
         revers(1);
         for (j = 0; j < rainbow_widths[i]; ++j) cputc(' ');
+=======
+        textcolor(colors[i]);
+        revers(1);
+        cputc(' ');
+>>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
         revers(0);
     }
 
@@ -63,7 +69,6 @@ void rainbow(void)
     revers(0);
     textcolor(COLOR_WHITE);
 }
-
 void paw_logo(void)
 {
     textcolor(COLOR_LIGHTRED);
@@ -128,11 +133,19 @@ void show_about(void)
 
     /* Description */
     textcolor(COLOR_WHITE);
+<<<<<<< HEAD
     gotoxy(5, 14);
     cputs("A SMART TERMINAL FOR THE C64");
 
     gotoxy(5, 16);
     cputs("BUILT FOR COMMUNICATION");
+=======
+    gotoxy(3, 11);
+    cputs("A Smol OS for the c 64 / 6510");
+
+    gotoxy(5, 13);
+    cputs("BUILT WITH BARKLY LABS C64 SDK");
+>>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
 
     /* Creator credits */
     textcolor(COLOR_LIGHTRED);

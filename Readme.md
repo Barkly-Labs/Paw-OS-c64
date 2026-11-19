@@ -4,6 +4,7 @@ PAW OS is a small Commodore 64 terminal with memory information, SID sound,
 PHONE/DTMF utilities, a MODEM command scaffold, and optional applications.
 PAW Synth is launched from the existing terminal and returns to it when closed.
 
+<<<<<<< HEAD
 ## PAW OS startup screen
 
 On entry, PAW OS clears the visible C64 startup banner and draws its own
@@ -14,6 +15,8 @@ space cells with C64 foreground colors and restores ordinary text mode after
 rendering. This replaces the visible BASIC/JiffyDOS text once the PAW OS PRG
 starts; it does not modify the C64 KERNAL or make the PRG auto-boot by itself.
 
+=======
+>>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
 ## Commands
 
 - `HELP` — command list
@@ -21,6 +24,10 @@ starts; it does not modify the C64 KERNAL or make the PRG auto-boot by itself.
 - `ABOUT` — PAW OS information and theme
 - `CLS` — redraw the terminal
 - `SYNTH` — open PAW Synth
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
 - `DISK` / `DISK 8` — show device status / select IEC device 8–11
 - `DIR` or `FILES` — open the PAW Files directory browser
 - `PWD` / `CD ..` — show the disk device's root context
@@ -28,6 +35,11 @@ starts; it does not modify the C64 KERNAL or make the PRG auto-boot by itself.
 - `DELETE filename` — ask for confirmation, then scratch a file
 - `RENAME old new` — rename a file on the active device
 - `LOAD`, `RUN`, `SAVE`, `COPY` — report the safe-operation boundary
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b5800ffa93ad7f862755c01629bb8cbec9eae056
+>>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
 - `PHONE` — telephone command help
 - `DTMF 5551234` — generate DTMF tones through SID voices 1 and 2
 - `DTMFTEST` — play all 16 DTMF keypad pairs through the SID
@@ -39,11 +51,18 @@ starts; it does not modify the C64 KERNAL or make the PRG auto-boot by itself.
 
 Install cc65 (including `cl65`) and GNU Make, then run `make` from the project
 directory. The C64 PRG target is `build/pawos.prg`. Run `make clean` before a
+<<<<<<< HEAD
 full rebuild. The bundled `build/pawos.prg` is the original supplied binary;
 it could not be regenerated in the current environment because cc65 is not
 installed, so it does not include the updated Synth, Disk, Files, or branded
 startup screen. To test a new build in VICE, launch it with a C64 model, for
 example `x64sc build/pawos.prg`.
+=======
+full rebuild. The archived `build/pawos.prg` is the original supplied binary;
+it could not be regenerated in the current environment because cc65 is not
+installed. To test a new build in VICE, launch it with a C64 model, for example
+`x64sc build/pawos.prg`.
+>>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
 
 ## PAW Synth
 
@@ -101,6 +120,10 @@ an external modem. The serial backend is intentionally not claimed as working
 until the exact adapter and modem are known. The modem, not the SID, performs
 carrier negotiation and data transfer.
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
 ## PAW Disk and PAW Files
 
 PAW Disk uses cc65's Commodore KERNAL/IEC file interfaces (`cbm.h`), DOS
@@ -138,8 +161,15 @@ The directory buffer is limited to 18 entries to keep memory use bounded.
 VICE and physical-drive behavior still need testing with an attached disk
 image or IEC drive. The current build environment did not include cc65 or VICE,
 so the PRG in the archive remains the supplied snapshot binary; it does not
+<<<<<<< HEAD
 contain the PAW Synth, PAW Disk, or branded boot-screen source integrations.
 
+=======
+contain the new disk subsystem.
+
+=======
+>>>>>>> b5800ffa93ad7f862755c01629bb8cbec9eae056
+>>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
 The DTMF generator configures both SID voice envelopes, enables triangle-wave
 output on both voices, and uses paired NTSC SID tuning words. `FAST` uses a
 shorter tone and gap. The frequency table is calibrated for a nominal NTSC C64;
