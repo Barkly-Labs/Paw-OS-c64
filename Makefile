@@ -1,5 +1,5 @@
 CC = cl65
-CFLAGS = -t c64 -O -I include
+CFLAGS = -t c64 -O -I include -C build/pawos.cfg
 OUT = build/pawos.prg
 
 SOURCES = src/main.c \
