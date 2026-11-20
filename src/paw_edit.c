@@ -6,6 +6,7 @@
 #include "paw_edit.h"
 #include "paw_disk.h"
 #include "paw_hw.h"
+#include "paw_ui.h"
 
 #define EDIT_SIZE 512
 #define EDIT_LFN 3
