@@ -1,10 +1,9 @@
 /* PawOS Puppy Easter Egg: cc65 / Commodore 64 VIC-II multicolor bitmap.
  *
  * This module uses VIC bank 3 ($C000-$FFFF), bitmap at $C000 and screen
- * matrix $E000-$E3e7. The integrator MUST reserve $C000-$DFFF and
- * $E000-$E3e7 from PawOS, cc65 code/data, stack, and interrupt-owned buffers.
- * It saves and restores the full 8 KB bitmap area, 1 KB screen, 1 KB Color RAM,
- * and relevant registers. Its own static storage is about 20 KB.
+ * matrix $E000-$E3E7. build/pawos.cfg reserves $C000-$E3E7 from cc65-managed
+ * memory. The bitmap and screen RAM are dedicated display storage; only Color
+ * RAM and VIC/CIA configuration are saved and restored.
  */
 #include <conio.h>
 #include <stdint.h>
@@ -667,6 +666,7 @@ extern unsigned char paw_puppy_egg_irq_enabled(void);
 void paw_puppy_egg(void)
 {
     unsigned int i;
+    unsigned int cell_y, scanline, cell_x, dst, src;
     unsigned char old_01;
     unsigned char old_dd00, old_dd02;
     unsigned char old_d011, old_d016, old_d018, old_d020, old_d021;
@@ -702,16 +702,36 @@ void paw_puppy_egg(void)
     for (i = 0; i < COLOR_SIZE; ++i)
         saved_color[i] = (unsigned char)(color[i] & 0x0f);
 
-    /* $C000-$CFFF is RAM with normal mapping. For $D000-$DFFF, map character
-     * ROM instead of I/O. CPU writes still reach underlying RAM, while
-     * HIRAM stays set so the KERNAL/NMI vectors remain visible. Keep $01 bits
-     * 3-7 untouched (including datasette control/sense lines). */
-    for (i = 0; i < 0x1000u; ++i)
-        bitmap[i] = egg_bitmap[i];
+    /* The asset bytes are in scanline order, but VIC-II bitmap RAM is laid
+     * out as eight consecutive bytes per 8x8 cell. Reorder while copying:
+     * source = cell-row, scanline, cell-column; destination = cell-row,
+     * cell-column, scanline. Split by destination address so writes to
+     * $D000-$DFFF happen with character ROM selected instead of I/O. HIRAM
+     * stays set for valid KERNAL/NMI vectors, and $01 upper bits are preserved. */
+    for (cell_y = 0; cell_y < 25u; ++cell_y) {
+        for (scanline = 0; scanline < 8u; ++scanline) {
+            for (cell_x = 0; cell_x < 40u; ++cell_x) {
+                dst = cell_y * 320u + cell_x * 8u + scanline;
+                if (dst < 0x1000u) {
+                    src = cell_y * 320u + scanline * 40u + cell_x;
+                    bitmap[dst] = egg_bitmap[src];
+                }
+            }
+        }
+    }
 
     PAW_VIC(0x01) = (unsigned char)((old_01 | 0x02) & 0xfb);
-    for (i = 0; i < BITMAP_SIZE - 0x1000u; ++i)
-        bitmap[0x1000u + i] = egg_bitmap[0x1000u + i];
+    for (cell_y = 0; cell_y < 25u; ++cell_y) {
+        for (scanline = 0; scanline < 8u; ++scanline) {
+            for (cell_x = 0; cell_x < 40u; ++cell_x) {
+                dst = cell_y * 320u + cell_x * 8u + scanline;
+                if (dst >= 0x1000u) {
+                    src = cell_y * 320u + scanline * 40u + cell_x;
+                    bitmap[dst] = egg_bitmap[src];
+                }
+            }
+        }
+    }
 
     /* KERNAL ROM remains mapped at $E000; ROM-mapped writes go to RAM below. */
     for (i = 0; i < SCREEN_SIZE; ++i)
