@@ -9,4 +9,5 @@ void boot_screen(void);
 void draw_screen(void);
 void clear_output(void);
 void paw_sprites_clear(void);
+void draw_radio_screen(void);
 #endif
