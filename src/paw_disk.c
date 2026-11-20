@@ -239,6 +239,31 @@ void paw_disk_close_seq(void)
     cbm_close(PAW_DISK_DATA_LFN);
 }
 
+unsigned char paw_disk_open_prg(const char *filename)
+{
+    unsigned char error;
+
+    if (!paw_disk_filename_valid(filename)) {
+        last_code = 0xFD;
+        strcpy(last_status, "UNSUPPORTED FILE NAME");
+        return last_code;
+    }
+
+    error = cbm_open(PAW_DISK_DATA_LFN, active_device, CBM_READ, filename);
+    if (error != 0) return report_open_error(error);
+    return 0;
+}
+
+int paw_disk_read_prg(void *buffer, unsigned int size)
+{
+    return cbm_read(PAW_DISK_DATA_LFN, buffer, size);
+}
+
+void paw_disk_close_prg(void)
+{
+    cbm_close(PAW_DISK_DATA_LFN);
+}
+
 const char *paw_disk_last_status(void)
 {
     return last_status;
