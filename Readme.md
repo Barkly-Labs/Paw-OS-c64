@@ -1,178 +1,183 @@
-# PAW OS — C64 communications terminal
+# 🐾 PawOS
 
-PAW OS is a small Commodore 64 terminal with memory information, SID sound,
-PHONE/DTMF utilities, a MODEM command scaffold, and optional applications.
-PAW Synth is launched from the existing terminal and returns to it when closed.
+### A modern systems-engineering experiment for the Commodore 64.
 
-<<<<<<< HEAD
-## PAW OS startup screen
+<p align="center">
+  <img src="assets/source.png" alt="PawOS Puppy graphical Easter egg" width="700">
+</p>
 
-On entry, PAW OS clears the visible C64 startup banner and draws its own
-40-column screen: a tapered, animated rainbow on the left, the original paw
-art immediately to its right, PAW OS branding, memory and system status, and a
-`READY.` line above the `PAW>` command prompt. The animation uses reverse-video
-space cells with C64 foreground colors and restores ordinary text mode after
-rendering. This replaces the visible BASIC/JiffyDOS text once the PAW OS PRG
-starts; it does not modify the C64 KERNAL or make the PRG auto-boot by itself.
+<p align="center">
+  <strong>Reimagining what an operating-system-style environment can look like on a 1982-era computer.</strong>
+</p>
 
-=======
->>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
-## Commands
+---
 
-- `HELP` — command list
-- `MEM` — memory information
-- `ABOUT` — PAW OS information and theme
-- `CLS` — redraw the terminal
-- `SYNTH` — open PAW Synth
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
-- `DISK` / `DISK 8` — show device status / select IEC device 8–11
-- `DIR` or `FILES` — open the PAW Files directory browser
-- `PWD` / `CD ..` — show the disk device's root context
-- `TYPE README` — page through a sequential text file
-- `DELETE filename` — ask for confirmation, then scratch a file
-- `RENAME old new` — rename a file on the active device
-- `LOAD`, `RUN`, `SAVE`, `COPY` — report the safe-operation boundary
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b5800ffa93ad7f862755c01629bb8cbec9eae056
->>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
-- `PHONE` — telephone command help
-- `DTMF 5551234` — generate DTMF tones through SID voices 1 and 2
-- `DTMFTEST` — play all 16 DTMF keypad pairs through the SID
-- `DIAL 555-1234 FAST` — same SID tone output with shorter tone/gap timing
-- `MODEM` — dial-up modem hardware requirements
-- `MODEM DIAL 5551234` — display the `ATDT` request; it is not transmitted
+## What is PawOS?
 
-## Build
+**PawOS** is an experimental operating-system-style environment being developed for the Commodore 64 using C and cc65.
 
-Install cc65 (including `cl65`) and GNU Make, then run `make` from the project
-directory. The C64 PRG target is `build/pawos.prg`. Run `make clean` before a
-<<<<<<< HEAD
-full rebuild. The bundled `build/pawos.prg` is the original supplied binary;
-it could not be regenerated in the current environment because cc65 is not
-installed, so it does not include the updated Synth, Disk, Files, or branded
-startup screen. To test a new build in VICE, launch it with a C64 model, for
-example `x64sc build/pawos.prg`.
-=======
-full rebuild. The archived `build/pawos.prg` is the original supplied binary;
-it could not be regenerated in the current environment because cc65 is not
-installed. To test a new build in VICE, launch it with a C64 model, for example
-`x64sc build/pawos.prg`.
->>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
+Built around the limitations and architecture of the 6510 processor and Commodore 64 hardware, PawOS explores how modern software engineering concepts—including modular architecture, memory management, hardware interaction, disk-based resources, and extensible software—can be applied to a machine with only 64 KB of address space.
 
-## PAW Synth
+PawOS isn't an attempt to pretend the Commodore 64 is a modern computer.
 
-At the `PAW>` prompt, enter `SYNTH`. The app has a native 40×25 PETSCII
-interface. Press ESC to leave immediately, or press `/` and enter `EXIT` at
-the `SYNTH>` prompt. Both return to the PAW OS terminal.
+It's an exploration of just how far thoughtful engineering can take one.
 
-### Keyboard controls
+## ✨ Features & Subsystems
 
-| Key | Action |
-| --- | --- |
-| A W S E D F T G Y H U J | Play C, C#, D, D#, E, F, F#, G, G#, A, A#, B |
-| Z / X | Lower / raise octave (octaves 2–6) |
-| SPACE | Stop the current note |
-| Arrow keys | Select a sound setting and adjust its value |
-| `/` then `EXIT` | Leave through the `SYNTH>` command prompt |
-| ESC | Exit PAW Synth |
+PawOS is evolving into a collection of interconnected subsystems designed to bring an OS-like experience to the Commodore 64.
 
-The KERNAL character input used by this app reports key presses, not key
-release events. Notes therefore stay gated until SPACE, another note, or ESC;
-this is a deliberate, visible trigger-and-stop behavior rather than claimed
-held-key detection. Polling is non-blocking between short frame waits.
+| Subsystem | Description |
+|---|---|
+| 🖥️ Shell | Command-driven environment for interacting with PawOS. |
+| 🧠 Memory | Memory inspection and system resource management tools. |
+| 💾 Disk | Commodore disk operations, directory access, file handling and disk commands. |
+| 🎵 SID | Sound interaction with the Commodore 64's SID chip. |
+| 🎹 Synth | Experimental sound and synthesis functionality. |
+| ☎️ Phone | An experimental phone-oriented subsystem. |
+| 🔢 DTMF | Dual-tone multifrequency generation and functionality. |
+| 📝 Editor | Integrated text editing functionality. |
+| 🐾 Puppy Easter Egg | A graphical bitmap experiment using the VIC-II. |
 
-### Joystick port 2
+<sub>Subsystems are actively evolving. Features, integration and architecture may change as development progresses.</sub>
 
-UP/DOWN selects a setting, LEFT/RIGHT changes it, and FIRE plays C in the
-current octave. Keyboard controls remain active while joystick input is used.
+---
 
-### Sound controls
+## ⚙️ Built for the Commodore 64
 
-PAW Synth uses SID voice 3. It supports triangle, sawtooth, pulse, and noise
-waveforms, NTSC pitch tuning from octaves 2–6, pulse width, ADSR envelope,
-volume, and a basic low-pass filter. Settings are selected with the arrow keys
-or joystick directions. The selected line is highlighted; LEFT/RIGHT adjusts
-the value. The SID's shared volume and filter controls are saved on entry and
-restored on exit, as are voice 3 registers. Voices 1 and 2 remain available to
-the existing PHONE/DTMF routines.
+PawOS is developed with the realities of the Commodore 64 hardware in mind.
 
-The SID has three hardware voices. Synth uses voice 3 and does not provide
-polyphonic keyboard playback. Frequency values are calibrated for an NTSC SID;
-PAL pitch should be tuned separately. The app doesn't provide a key-release
-event, MIDI, or audio recording.
+- **CPU:** MOS 6510
+- **Platform:** Commodore 64
+- **Architecture:** 8-bit
+- **Address space:** 64 KB
+- **Graphics:** VIC-II
+- **Audio:** SID
+- **Language:** C with cc65
+- **Testing:** VICE emulator
+- **Development environment:** Linux / WSL
 
-## Hardware and current implementation boundary
+Working within a constrained environment means memory, hardware mapping, executable size, and resource placement are not abstract concerns. They are fundamental parts of the design.
 
-The PHONE/DTMF commands generate audible DTMF on the C64 SID output. They do
-not seize a phone line, detect dial tone, or place a call by themselves. Use an
-appropriate isolated, approved telephone interface or acoustic coupler; never
-connect SID audio directly to telephone wiring.
+---
 
-The MODEM command currently provides the command/UI scaffold only. Actual
-dial-up data calls need a serial interface for the C64 (for example, a
-compatible user-port RS-232 adapter or SwiftLink/Turbo232-style interface) and
-an external modem. The serial backend is intentionally not claimed as working
-until the exact adapter and modem are known. The modem, not the SID, performs
-carrier negotiation and data transfer.
+## 🧩 Architecture & Experiments
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
-## PAW Disk and PAW Files
+PawOS is designed as an evolving collection of software subsystems rather than a single monolithic application.
 
-PAW Disk uses cc65's Commodore KERNAL/IEC file interfaces (`cbm.h`), DOS
-directory/status channels, and the device's command channel. The default IEC
-device is 8. `DISK 8` through `DISK 11` select a device for the current PAW OS
-session; the choice is held in PAW Disk's own in-memory state and resets to 8
-after reboot.
+Development currently explores:
 
-`DIR` and `FILES` open the same native 40-column file browser. It displays
-entries returned by the disk device, their Commodore file type and block
-count, and available free blocks. The browser shows the first 18 entries and
-supports keyboard UP/DOWN, ENTER or T to view a SEQ file, D to delete after a
-Y/N confirmation, and Q or ESC to return to PAW OS. Joystick port 2 UP/DOWN
-selects entries and FIRE attempts to view the selected SEQ file. Keyboard
-controls remain available. Device status and file-operation responses are
-read from the DOS status channel.
+- Modular C architecture.
+- Subsystem interfaces and separation of responsibilities.
+- Memory layout and resource constraints.
+- VIC-II bitmap graphics and memory banking.
+- SID audio experimentation.
+- Disk operations and file management.
+- Runtime resource loading.
+- Externalizing static assets from the main executable.
+- Exploring disk-backed program loading.
 
-Commodore 1541 DOS does not provide general nested directories. PAW Disk keeps
-the current context at `/` as a virtual display label only; `CD` and `CD ..`
-do not claim to change a drive-side directory. `TYPE` and browser viewing are
-for SEQ files, with paged output and Q/ESC to stop. Filename operations accept
-a conservative subset of names up to 16 characters: letters, digits, spaces
-inside the name, `_`, `-`, and `.`. They reject DOS punctuation and wildcards.
-The command-line RENAME form uses single-token names.
+### Disk-backed architecture
 
-`LOAD` and `RUN` are deliberately disabled: loading a PRG at its embedded
-address or jumping into it could overwrite the resident OS, KERNAL vectors, or
-runtime state. `SAVE` has no defined PAW-owned memory region to save, and a
-safe multi-drive/staged `COPY` implementation is not included. The commands
-report these limits rather than pretending to perform the operations. These
-features need a documented cooperative application memory map and tested
-drive-specific copy behavior before they can safely be enabled.
+One of the primary architectural goals is to reduce the footprint of the resident system by moving resources and potentially programs into external disk files.
 
-The directory buffer is limited to 18 entries to keep memory use bounded.
-VICE and physical-drive behavior still need testing with an attached disk
-image or IEC drive. The current build environment did not include cc65 or VICE,
-so the PRG in the archive remains the supplied snapshot binary; it does not
-<<<<<<< HEAD
-contain the PAW Synth, PAW Disk, or branded boot-screen source integrations.
+The project is exploring a model in which:
 
-=======
-contain the new disk subsystem.
+- Core functionality remains resident.
+- Graphics and other resources are loaded from disk when needed.
+- Nonessential programs can eventually be loaded on demand.
+- Memory can be reclaimed when components are no longer needed.
+- The disk becomes part of the system's software architecture, rather than simply persistent storage.
 
-=======
->>>>>>> b5800ffa93ad7f862755c01629bb8cbec9eae056
->>>>>>> 7567cb157cb5f852c32566c3d357eecc7e6ba2cc
-The DTMF generator configures both SID voice envelopes, enables triangle-wave
-output on both voices, and uses paired NTSC SID tuning words. `FAST` uses a
-shorter tone and gap. The frequency table is calibrated for a nominal NTSC C64;
-PAL machines need a PAL-specific tuning table. Frame-based timing and output
-level should be verified on the target C64/SID revision and in the chosen VICE
-audio configuration.
+This architecture is a work in progress.
+
+---
+
+## 🐾 VIC-II Graphics Experiment
+
+PawOS includes a bitmap-based graphical Easter egg that experiments with the Commodore 64's VIC-II graphics hardware.
+
+The experiment involves:
+
+- Bitmap graphics.
+- Screen matrix manipulation.
+- Color RAM.
+- VIC-II memory configuration.
+- CPU memory banking.
+- Video state restoration.
+- External bitmap and color-map assets.
+
+The graphics assets are being transitioned from embedded C arrays toward disk-based loading to reduce the resident executable's footprint.
+
+---
+
+## 🛠️ Building PawOS
+
+PawOS is built using cc65.
+
+### Requirements
+
+- [cc65](https://cc65.github.io/)
+- GNU Make
+- VICE (recommended for testing)
+
+### Build
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Barkly-Labs/pawos-c64.git
+cd pawos-c64
+```
+
+Build the project:
+
+```bash
+make
+```
+
+The build system generates the PawOS executable in the project's build directory.
+
+<sub>Build requirements and commands may evolve as the project develops.</sub>
+
+---
+
+## 🧪 Development philosophy
+
+PawOS is an experimental systems project.
+
+Development focuses on exploring ideas, testing implementations against actual hardware constraints, and evolving the architecture incrementally.
+
+The project values:
+
+- **Resource awareness** — working within the constraints of the target hardware.
+- **Modularity** — separating subsystems and responsibilities.
+- **Experimentation** — exploring unconventional approaches to retro computing.
+- **Verification** — validating behavior instead of assuming it works.
+- **Incremental engineering** — making changes that can be tested and understood.
+- **Curiosity** — learning by building.
+
+---
+
+## 🚧 Project status
+
+PawOS is actively under development.
+
+The current focus includes subsystem development, disk functionality, memory optimization, graphics experiments, and exploring a disk-backed modular architecture.
+
+This is an experimental project, not a finished production operating system.
+
+---
+
+## 🐶 Why?
+
+Because limitations can be an invitation to engineer.
+
+The Commodore 64 is a machine with an extraordinarily constrained environment by modern standards. Exploring operating-system-style architecture on it is an opportunity to understand software, hardware, memory, and engineering tradeoffs at a much deeper level.
+
+PawOS is an attempt to bring modern development ideas into a classic computing environment—and to discover what is still possible.
+
+---
+
+<p align="center">
+  <strong>🐾 PawOS — People are people, not numbers. Even in the world of computing.</strong>
+</p>
