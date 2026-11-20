@@ -660,6 +660,7 @@ static unsigned char saved_color[COLOR_SIZE];
 void paw_puppy_egg(void)
 {
     unsigned int i;
+    unsigned char old_01;
     unsigned char old_dd00, old_dd02;
     unsigned char old_d011, old_d016, old_d018, old_d020, old_d021;
     unsigned char old_d022, old_d023;
@@ -671,11 +672,7 @@ void paw_puppy_egg(void)
     screen = (volatile unsigned char *)SCREEN_ADDR;
     color = (volatile unsigned char *)COLOR_ADDR;
 
-    /* Snapshot all memory this routine will overwrite before changing VIC-II. */
-    for (i = 0; i < BITMAP_SIZE; ++i) saved_bitmap[i] = bitmap[i];
-    for (i = 0; i < SCREEN_SIZE; ++i) saved_screen[i] = screen[i];
-    for (i = 0; i < COLOR_SIZE; ++i) saved_color[i] = (unsigned char)(color[i] & 0x0f);
-
+    old_01   = PAW_VIC(0x01);
     old_dd00 = PAW_VIC(0xdd00);
     old_dd02 = PAW_VIC(0xdd02);
     old_d011 = PAW_VIC(0xd011);
@@ -686,36 +683,54 @@ void paw_puppy_egg(void)
     old_d022 = PAW_VIC(0xd022);
     old_d023 = PAW_VIC(0xd023);
 
-    /* Fill reserved RAM and Color RAM. */
-    for (i = 0; i < BITMAP_SIZE; ++i) bitmap[i] = egg_bitmap[i];
-    for (i = 0; i < SCREEN_SIZE; ++i) {
-        screen[i] = egg_screen[i];
-        color[i] = (unsigned char)(egg_color[i] & 0x0f);
-    }
+    /* Bank out ROM and I/O for direct access to underlying RAM. */
+    asm("sei");
+    PAW_VIC(0x01) = 0x00;
 
-    /* VIC bank 3 is $C000-$FFFF. CIA2 bank select bits = 00. */
+    for (i = 0; i < BITMAP_SIZE; ++i) saved_bitmap[i] = bitmap[i];
+    for (i = 0; i < SCREEN_SIZE; ++i) saved_screen[i] = screen[i];
+
+    for (i = 0; i < BITMAP_SIZE; ++i) bitmap[i] = egg_bitmap[i];
+    for (i = 0; i < SCREEN_SIZE; ++i) screen[i] = egg_screen[i];
+
+    /* Restore I/O visibility for Color RAM and VIC/CIA registers. */
+    PAW_VIC(0x01) = 0x07;
+
+    for (i = 0; i < COLOR_SIZE; ++i)
+        saved_color[i] = (unsigned char)(color[i] & 0x0f);
+
+    for (i = 0; i < COLOR_SIZE; ++i)
+        color[i] = (unsigned char)(egg_color[i] & 0x0f);
+
+    /* VIC bank 3: C000 bitmap, E000 screen matrix. */
     PAW_VIC(0xdd02) = (unsigned char)(old_dd02 | 0x03);
     PAW_VIC(0xdd00) = (unsigned char)(old_dd00 & 0xfc);
-    PAW_VIC(0xd018) = 0x80; /* screen $E000, bitmap $C000 */
+    PAW_VIC(0xd018) = 0x80;
     PAW_VIC(0xd020) = 0;
-    PAW_VIC(0xd021) = 0; /* background color, also bitmap code 00 */
-    PAW_VIC(0xd022) = 0x0a; /* shared multicolor 1 */
-    PAW_VIC(0xd023) = 0x04; /* shared multicolor 2 */
-    PAW_VIC(0xd016) = (unsigned char)((old_d016 & 0xef) | 0x10); /* multicolor */
-    PAW_VIC(0xd011) = (unsigned char)((old_d011 & 0x5f) | 0x20); /* bitmap, display on */
+    PAW_VIC(0xd021) = 0;
+    PAW_VIC(0xd022) = 0x0a;
+    PAW_VIC(0xd023) = 0x04;
+    PAW_VIC(0xd016) = (unsigned char)((old_d016 & 0xef) | 0x10);
+    PAW_VIC(0xd011) = (unsigned char)((old_d011 & 0x9f) | 0x20);
 
-    /* Wait for one key without printing into the bitmap. */
+    /* Restore normal CPU mapping and IRQs for KERNAL keyboard input. */
+    PAW_VIC(0x01) = old_01;
+    asm("cli");
+
     (void)cgetc();
 
-    /* Blank display during restoration to avoid showing partially restored data. */
+    /* Disable IRQs while restoring underlying RAM. */
+    asm("sei");
     PAW_VIC(0xd011) = (unsigned char)(PAW_VIC(0xd011) & 0xef);
-    for (i = 0; i < BITMAP_SIZE; ++i) bitmap[i] = saved_bitmap[i];
-    for (i = 0; i < SCREEN_SIZE; ++i) {
-        screen[i] = saved_screen[i];
-        color[i] = saved_color[i];
-    }
+    PAW_VIC(0x01) = 0x00;
 
-    /* Restore CIA2 bank state and VIC-II registers; D011 last re-enables display. */
+    for (i = 0; i < BITMAP_SIZE; ++i) bitmap[i] = saved_bitmap[i];
+    for (i = 0; i < SCREEN_SIZE; ++i) screen[i] = saved_screen[i];
+
+    /* Restore Color RAM with I/O visible. */
+    PAW_VIC(0x01) = 0x07;
+    for (i = 0; i < COLOR_SIZE; ++i) color[i] = saved_color[i];
+
     PAW_VIC(0xdd00) = old_dd00;
     PAW_VIC(0xdd02) = old_dd02;
     PAW_VIC(0xd018) = old_d018;
@@ -725,4 +740,7 @@ void paw_puppy_egg(void)
     PAW_VIC(0xd023) = old_d023;
     PAW_VIC(0xd016) = old_d016;
     PAW_VIC(0xd011) = old_d011;
+
+    PAW_VIC(0x01) = old_01;
+    asm("cli");
 }
