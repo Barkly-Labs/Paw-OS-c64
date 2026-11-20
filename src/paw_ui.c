@@ -66,33 +66,36 @@ void rainbow(void)
 
 
 
+
 void paw_logo(void)
 {
-    /* Four distinct toe beans */
+    /* Four toe pads */
     textcolor(COLOR_LIGHTRED);
 
-    gotoxy(24, 2);
-    cputs(" (__)  (__) ");
+    gotoxy(25, 2);
+    cputs("  /\\     /\\");
 
-    gotoxy(23, 3);
-    cputs("(__)      (__)");
+    gotoxy(24, 3);
+    cputs(" /  \\   /  \\");
 
-    /* Central paw pad with defined lobes */
+    gotoxy(24, 4);
+    cputs(" \\__/   \\__/");
+
+    /* Large central paw pad */
     textcolor(COLOR_YELLOW);
 
-    gotoxy(26, 4);
-    cputs("  __  __");
-
-    gotoxy(25, 5);
-    cputs(" /        \\");
+    gotoxy(26, 5);
+    cputs("  .----.");
 
     gotoxy(25, 6);
-    cputs("|          |");
+    cputs(" /      \\");
 
-    gotoxy(26, 7);
-    cputs(" \\________/");
+    gotoxy(25, 7);
+    cputs("|        |");
+
+    gotoxy(26, 8);
+    cputs(" \\______/");
 }
-
 
 
 void clear_output(void)
