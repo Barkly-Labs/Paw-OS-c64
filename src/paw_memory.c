@@ -11,13 +11,8 @@ void show_memory(void)
     largest = _heapmaxavail();
 
     textcolor(COLOR_WHITE);
-<<<<<<< HEAD
-    
-    gotoxy(2, 14);
-=======
 
     gotoxy(2, 15);
->>>>>>> 5c1b5064ffd1b133295cda87a67dcf8484ada276
     cprintf("FREE HEAP: %u BYTES   ", total);
 
     gotoxy(2, 16);
