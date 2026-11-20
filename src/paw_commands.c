@@ -195,7 +195,7 @@ else if (strcmp(command, "DIR") == 0 || strcmp(command, "FILES") == 0) {
     }
 
     else if (strcmp(command, "PUPPY") == 0) {
-    paw_puppy_egg();
+    paw_puppy_egg_load_bitmap();
     }
 
     else if (strcmp(command, "EDIT") == 0) {

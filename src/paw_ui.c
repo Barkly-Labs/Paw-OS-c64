@@ -386,7 +386,7 @@ static void paw_boot_border_animation(void)
     cputs("PAW OS BOOT");
 
     gotoxy(12, 13);
-    cputs("INITIALIZING");
+    cputs("INITIALIZING UWU");
 
     for (frame = 0; frame < 32; ++frame) {
         BORDER = colors[frame & 7];
