@@ -110,16 +110,24 @@ void clear_output(void)
 void show_help(void)
 {
     clrscr();
-    textcolor(COLOR_CYAN);
 
-    gotoxy(2, 21);
+    paw_logo();
+    rainbow();
+
+    textcolor(COLOR_LIGHTRED);
+    gotoxy(16, 11);
+    cputs("PAW OS");
+
+    textcolor(COLOR_WHITE);
+    gotoxy(2, 12);
     cputs("COMMANDS");
 
-    gotoxy(2, 22);
+    textcolor(COLOR_CYAN);
+    gotoxy(2, 14);
     cputs("HELP MEM ABOUT CLS DISK DIR FILES PWD");
-    gotoxy(2, 23);
+    gotoxy(2, 15);
     cputs("CD TYPE DELETE RENAME PHONE DTMF DIAL");
-    gotoxy(2, 24);
+    gotoxy(2, 16);
     cputs("DTMFTEST MODEM SYNTH");
 }
 
