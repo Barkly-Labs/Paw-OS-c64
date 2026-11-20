@@ -295,6 +295,75 @@ static void draw_home_screen(unsigned char animate)
     cputs("PAW>");
 }
 
+/* PAW RADIO FULL-SCREEN MODULE */
+
+static void draw_radio_screen(void)
+{
+    clrscr();
+
+    BORDER = COLOR_PURPLE;
+    BACKGROUND = COLOR_BLACK;
+
+    paw_sprite_show();
+
+    /* Header */
+    textcolor(COLOR_LIGHTRED);
+    gotoxy(12, 2);
+    cputs("PAW RADIO");
+
+    textcolor(COLOR_WHITE);
+    gotoxy(7, 3);
+    cputs("BARKLY LABS - C64 RADIO STATION");
+
+    /* Divider */
+    textcolor(COLOR_CYAN);
+    gotoxy(1, 5);
+    cputs("----------------------------------------");
+
+    /* Menu */
+    textcolor(COLOR_LIGHTGREEN);
+    gotoxy(4, 7);
+    cputs("RADIO OPERATIONS");
+
+    textcolor(COLOR_WHITE);
+    gotoxy(5, 9);  cputs("1. RADIO CONTROL");
+    gotoxy(5, 10); cputs("2. BAND EXPLORER");
+    gotoxy(5, 11); cputs("3. SSTV STUDIO");
+    gotoxy(5, 12); cputs("4. PACKET TERMINAL");
+    gotoxy(5, 13); cputs("5. MORSE LAB");
+    gotoxy(5, 14); cputs("6. STATION LOG");
+    gotoxy(5, 15); cputs("7. HARDWARE STATUS");
+
+    /* Station status panel */
+    textcolor(COLOR_CYAN);
+    gotoxy(25, 7);
+    cputs("STATION STATUS");
+
+    textcolor(COLOR_WHITE);
+    gotoxy(25, 9);  cputs("MODE: STANDBY");
+    gotoxy(25, 10); cputs("RX: READY");
+    gotoxy(25, 11); cputs("TX: DISABLED");
+    gotoxy(25, 12); cputs("SID: READY");
+    gotoxy(25, 13); cputs("LINK: LOCAL");
+
+    /* Footer */
+    textcolor(COLOR_LIGHTGREEN);
+    gotoxy(1, 18);
+    cputs("----------------------------------------");
+
+    textcolor(COLOR_WHITE);
+    gotoxy(3, 20);
+    cputs("SELECT A RADIO MODULE USING THE KEYS");
+
+    textcolor(COLOR_LIGHTRED);
+    gotoxy(3, 22);
+    cputs("Q / ESC: RETURN TO PAW OS");
+
+    textcolor(COLOR_CYAN);
+    gotoxy(3, 24);
+    cputs("PAW RADIO :: SYSTEM READY");
+}
+
 void boot_screen(void)
 {
     draw_home_screen(1);
