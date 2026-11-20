@@ -64,28 +64,36 @@ void rainbow(void)
     textcolor(COLOR_WHITE);
 }
 
+
+
 void paw_logo(void)
 {
+    /* Four distinct toe beans */
     textcolor(COLOR_LIGHTRED);
 
-    /* Four rounded toe pads in the same position beside the boot rainbow. */
-    gotoxy(22, 2);
-    cputs("(O)   (O)");
+    gotoxy(24, 2);
+    cputs(" (__)  (__) ");
 
-    gotoxy(22, 3);
-    cputs("  (O) (O)");
+    gotoxy(23, 3);
+    cputs("(__)      (__)");
 
-    /* The larger palm pad uses simple PETSCII-compatible ASCII characters. */
+    /* Central paw pad with defined lobes */
     textcolor(COLOR_YELLOW);
-    gotoxy(22, 4);
-    cputs("   .----.");
 
-    gotoxy(22, 5);
-    cputs("  / PAW  \\");
+    gotoxy(26, 4);
+    cputs("  __  __");
 
-    gotoxy(22, 6);
-    cputs("  \\______/");
+    gotoxy(25, 5);
+    cputs(" /        \\");
+
+    gotoxy(25, 6);
+    cputs("|          |");
+
+    gotoxy(26, 7);
+    cputs(" \\________/");
 }
+
+
 
 void clear_output(void)
 {
@@ -137,7 +145,7 @@ void show_about(void)
 
     textcolor(COLOR_WHITE);
     gotoxy(5, 14);
-    cputs("A SMART TERMINAL FOR THE C64");
+    cputs("A SMART Interface FOR THE C64");
 
     gotoxy(8, 15);
     cputs("BUILT FOR COMMUNICATION");
@@ -167,7 +175,7 @@ static void draw_home_screen(unsigned char animate)
     clrscr();
 
     BORDER = COLOR_PURPLE;
-    BACKGROUND = COLOR_BLUE;
+    BACKGROUND = COLOR_BLACK;
 
     paw_logo();
     textcolor(COLOR_CYAN);
@@ -193,11 +201,7 @@ static void draw_home_screen(unsigned char animate)
     textcolor(COLOR_LIGHTGREEN);
     gotoxy(2, 17); cputs("TERMINAL: READY");
     gotoxy(2, 18); cputs("SID SOUND: READY");
-    textcolor(COLOR_CYAN);
-    gotoxy(2, 19); cputs("IEC DEVICE: 8 (ON DEMAND)");
 
-    textcolor(COLOR_LIGHTGREEN);
-    gotoxy(2, 21); cputs("READY.");
     textcolor(COLOR_WHITE);
     gotoxy(2, 22); cputs("TYPE HELP FOR COMMANDS");
 
