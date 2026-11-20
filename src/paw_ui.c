@@ -17,6 +17,7 @@ static const unsigned char rainbow_widths[8] = {
 #define RAINBOW_Y 2
 
 static void draw_rainbow_frame(unsigned char visible_width)
+<<<<<<< HEAD
 {
     unsigned char i;
     unsigned char j;
@@ -56,6 +57,21 @@ void rainbow(void)
         textcolor(rainbow_colors[i]);
         revers(1);
         for (j = 0; j < rainbow_widths[i]; ++j) cputc(' ');
+=======
+{
+    unsigned char i;
+    unsigned char j;
+    unsigned char width;
+
+    for (i = 0; i < 8; ++i) {
+        width = visible_width;
+        if (width > rainbow_widths[i]) width = rainbow_widths[i];
+
+        gotoxy(RAINBOW_X, (unsigned char)(RAINBOW_Y + i));
+        textcolor(rainbow_colors[i]);
+        revers(1);
+        for (j = 0; j < width; ++j) cputc(' ');
+>>>>>>> 5c1b5064ffd1b133295cda87a67dcf8484ada276
         revers(0);
     }
 
@@ -64,6 +80,35 @@ void rainbow(void)
     textcolor(COLOR_WHITE);
 }
 
+static void animate_rainbow(void)
+{
+    unsigned char width;
+
+    for (width = 1; width <= rainbow_widths[0]; ++width) {
+        draw_rainbow_frame(width);
+        waitvsync();
+    }
+    revers(0);
+    textcolor(COLOR_WHITE);
+}
+
+void rainbow(void)
+{
+    unsigned char i;
+    unsigned char j;
+
+    for (i = 0; i < 8; i++) {
+        gotoxy(RAINBOW_X, (unsigned char)(RAINBOW_Y + i));
+        textcolor(rainbow_colors[i]);
+        revers(1);
+        for (j = 0; j < rainbow_widths[i]; ++j) cputc(' ');
+        revers(0);
+    }
+
+    /* Leave ordinary text mode and a predictable foreground color. */
+    revers(0);
+    textcolor(COLOR_WHITE);
+}
 void paw_logo(void)
 {
     textcolor(COLOR_LIGHTRED);
@@ -93,8 +138,9 @@ void clear_output(void)
 
 void show_help(void)
 {
+    clrscr();
     textcolor(COLOR_CYAN);
-
+    
     gotoxy(2, 21);
     cputs("COMMANDS");
 
@@ -113,13 +159,21 @@ void show_about(void)
     BORDER = COLOR_PURPLE;
     BACKGROUND = COLOR_BLACK;
 
+<<<<<<< HEAD
     /* Reuse the same paw and rainbow renderers as the PAW OS boot screen. */
+=======
+    /* PAW logo and tapered rainbow header */
+>>>>>>> 5c1b5064ffd1b133295cda87a67dcf8484ada276
     paw_logo();
     rainbow();
 
     /* Keep the About copy below the shared eight-row brand header. */
     textcolor(COLOR_LIGHTRED);
+<<<<<<< HEAD
     gotoxy(16, 11);
+=======
+    gotoxy(16, 10);
+>>>>>>> 5c1b5064ffd1b133295cda87a67dcf8484ada276
     cputs("PAW OS");
 
     textcolor(COLOR_CYAN);
@@ -172,11 +226,19 @@ static void draw_home_screen(unsigned char animate)
     cputs("PAW OS");
 
     textcolor(COLOR_WHITE);
+<<<<<<< HEAD
     gotoxy(9, 11);
     cputs("BARKLY LABS C64 EDITION");
 
     /* The subtitle is on row 11; startup status begins below it. */
     gotoxy(2, 12);
+=======
+    gotoxy(9, 12);
+    cputs("BARKLY LABS C64 EDITION");
+
+    /* The subtitle is on row 11; startup status begins below it. */
+    gotoxy(2, 14);
+>>>>>>> 5c1b5064ffd1b133295cda87a67dcf8484ada276
     cputs("PAW OS SYSTEM STATUS                  ");
 
     show_memory();
@@ -184,12 +246,27 @@ static void draw_home_screen(unsigned char animate)
     textcolor(COLOR_LIGHTGREEN);
     gotoxy(2, 17); cputs("TERMINAL: READY");
     gotoxy(2, 18); cputs("SID SOUND: READY");
+<<<<<<< HEAD
     textcolor(COLOR_CYAN);
     textcolor(COLOR_WHITE);
     gotoxy(2, 22); cputs("TYPE HELP FOR COMMANDS");
 
     gotoxy(2, 24);
     cputs("PAW>");
+=======
+    textcolor(COLOR_WHITE);
+    gotoxy(2, 20); cputs("TYPE HELP FOR COMMANDS");
+}
+
+void boot_screen(void)
+{
+    draw_home_screen(1);
+}
+
+void draw_screen(void)
+{
+    draw_home_screen(0);
+>>>>>>> 5c1b5064ffd1b133295cda87a67dcf8484ada276
 }
 
 void boot_screen(void)
