@@ -9,7 +9,7 @@
 #include "paw_disk.h"
 #include "paw_files.h"
 #include "paw_puppy_egg.h"
-
+#include "paw_edit.h"
 
 static void run_phone_command(char *command)
 {
@@ -196,6 +196,15 @@ else if (strcmp(command, "DIR") == 0 || strcmp(command, "FILES") == 0) {
 
     else if (strcmp(command, "PUPPY") == 0) {
     paw_puppy_egg();
+    }
+
+    else if (strcmp(command, "EDIT") == 0) {
+        paw_edit_run("");
+    }
+    else if (strncmp(command, "EDIT ", 5) == 0) {
+        argument = command + 5;
+        while (*argument == ' ') ++argument;
+        paw_edit_run(argument);
     }
     
 

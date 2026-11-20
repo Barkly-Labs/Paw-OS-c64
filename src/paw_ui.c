@@ -206,7 +206,7 @@ void show_help(void)
     gotoxy(2, 15);
     cputs("CD TYPE DELETE RENAME PHONE DTMF DIAL");
     gotoxy(2, 16);
-    cputs("DTMFTEST MODEM SYNTH RADIO PUPPY");
+    cputs("DTMFTEST MODEM SYNTH RADIO PUPPY EDIT");
 }
 
 void show_about(void)
@@ -366,8 +366,44 @@ static void draw_home_screen(unsigned char animate)
     cputs("PAW RADIO :: SYSTEM READY");
 }
 
+static void paw_boot_border_animation(void)
+{
+    static const unsigned char colors[8] = {
+        COLOR_PURPLE, COLOR_BLUE, COLOR_CYAN, COLOR_GREEN,
+        COLOR_YELLOW, COLOR_ORANGE, COLOR_RED, COLOR_LIGHTRED
+    };
+
+    static const char spinner[4] = { '|', '/', '-', '\\' };
+
+    unsigned char frame;
+    unsigned char i;
+
+    clrscr();
+    BACKGROUND = COLOR_BLACK;
+
+    textcolor(COLOR_PURPLE);
+    gotoxy(13, 11);
+    cputs("PAW OS BOOT");
+
+    gotoxy(12, 13);
+    cputs("INITIALIZING");
+
+    for (frame = 0; frame < 32; ++frame) {
+        BORDER = colors[frame & 7];
+
+        textcolor(COLOR_PURPLE);
+        gotoxy(25, 13);
+        cputc(spinner[frame & 3]);
+
+        waitvsync();
+    }
+
+    BORDER = COLOR_PURPLE;
+}
+
 void boot_screen(void)
 {
+    paw_boot_border_animation();
     draw_home_screen(1);
 }
 

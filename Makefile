@@ -13,7 +13,8 @@ SOURCES = src/main.c \
           src/paw_files.c \
           src/paw_commands.c \
           src/paw_puppy_egg.c \
-          src/paw_puppy_egg_irq.s
+          src/paw_puppy_egg_irq.s\
+          src/paw_edit.c
 
 .PHONY: all clean
 
