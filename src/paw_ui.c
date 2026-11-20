@@ -205,7 +205,7 @@ void show_help(void)
     gotoxy(2, 15);
     cputs("CD TYPE DELETE RENAME PHONE DTMF DIAL");
     gotoxy(2, 16);
-    cputs("DTMFTEST MODEM SYNTH");
+    cputs("DTMFTEST MODEM SYNTH RADIO");
 }
 
 void show_about(void)
@@ -297,14 +297,13 @@ static void draw_home_screen(unsigned char animate)
 
 /* PAW RADIO FULL-SCREEN MODULE */
 
-static void draw_radio_screen(void)
+ void draw_radio_screen(void)
 {
     clrscr();
 
     BORDER = COLOR_PURPLE;
     BACKGROUND = COLOR_BLACK;
 
-    paw_sprite_show();
 
     /* Header */
     textcolor(COLOR_LIGHTRED);
