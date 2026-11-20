@@ -1,5 +1,5 @@
 CC = cl65
-CFLAGS = -t c64 -O -I include -C build/pawos.cfg
+CFLAGS = -t c64 -O -I include -C build/pawos.cfg -vm -m build/pawos.map -Ln build/pawos.lbl
 OUT = build/pawos.prg
 
 SOURCES = src/main.c \
@@ -12,7 +12,8 @@ SOURCES = src/main.c \
           src/paw_disk.c \
           src/paw_files.c \
           src/paw_commands.c \
-          src/paw_puppy_egg.c
+          src/paw_puppy_egg.c \
+          src/paw_puppy_egg_irq.s
 
 .PHONY: all clean
 

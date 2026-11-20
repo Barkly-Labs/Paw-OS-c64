@@ -653,9 +653,16 @@ static const unsigned char egg_color[1000] = {
     0x0e, 0x0e, 0x0e, 0x0e, 0x00, 0x00, 0x00, 0x00,
 };
 
-static unsigned char saved_bitmap[BITMAP_SIZE];
-static unsigned char saved_screen[SCREEN_SIZE];
+/* The linker reserves $C000-$E3E7 exclusively for VIC-II graphics. The
+ * shell's text screen is elsewhere, so the old bitmap/screen backup arrays
+ * were both wasteful and impossible to read safely under ROM overlays. Keep
+ * the Color RAM backup because Color RAM is shared with the shell display. */
 static unsigned char saved_color[COLOR_SIZE];
+
+/* Returns nonzero when the caller entered with IRQs enabled. The egg needs
+ * KERNAL keyboard scanning while it waits; if IRQs are already masked, leave
+ * the machine unchanged rather than enabling them or waiting forever. */
+extern unsigned char paw_puppy_egg_irq_enabled(void);
 
 void paw_puppy_egg(void)
 {
@@ -668,11 +675,20 @@ void paw_puppy_egg(void)
     volatile unsigned char *screen;
     volatile unsigned char *color;
 
+    if (!paw_puppy_egg_irq_enabled()) {
+        return;
+    }
+
     bitmap = (volatile unsigned char *)BITMAP_ADDR;
     screen = (volatile unsigned char *)SCREEN_ADDR;
     color = (volatile unsigned char *)COLOR_ADDR;
 
-    old_01   = PAW_VIC(0x01);
+    /* PawOS uses the normal KERNAL environment. Freeze it while saving the
+     * video state and copying RAM so no IRQ sees I/O temporarily hidden. */
+    asm("sei");
+    old_01 = PAW_VIC(0x01);
+    PAW_VIC(0x01) = (unsigned char)(old_01 | 0x07); /* KERNAL, BASIC, I/O */
+
     old_dd00 = PAW_VIC(0xdd00);
     old_dd02 = PAW_VIC(0xdd02);
     old_d011 = PAW_VIC(0xd011);
@@ -683,26 +699,30 @@ void paw_puppy_egg(void)
     old_d022 = PAW_VIC(0xd022);
     old_d023 = PAW_VIC(0xd023);
 
-    /* Bank out ROM and I/O for direct access to underlying RAM. */
-    asm("sei");
-    PAW_VIC(0x01) = 0x00;
-
-    for (i = 0; i < BITMAP_SIZE; ++i) saved_bitmap[i] = bitmap[i];
-    for (i = 0; i < SCREEN_SIZE; ++i) saved_screen[i] = screen[i];
-
-    for (i = 0; i < BITMAP_SIZE; ++i) bitmap[i] = egg_bitmap[i];
-    for (i = 0; i < SCREEN_SIZE; ++i) screen[i] = egg_screen[i];
-
-    /* Restore I/O visibility for Color RAM and VIC/CIA registers. */
-    PAW_VIC(0x01) = 0x07;
-
     for (i = 0; i < COLOR_SIZE; ++i)
         saved_color[i] = (unsigned char)(color[i] & 0x0f);
 
+    /* $C000-$CFFF is RAM with normal mapping. For $D000-$DFFF, map character
+     * ROM instead of I/O. CPU writes still reach underlying RAM, while
+     * HIRAM stays set so the KERNAL/NMI vectors remain visible. Keep $01 bits
+     * 3-7 untouched (including datasette control/sense lines). */
+    for (i = 0; i < 0x1000u; ++i)
+        bitmap[i] = egg_bitmap[i];
+
+    PAW_VIC(0x01) = (unsigned char)((old_01 | 0x02) & 0xfb);
+    for (i = 0; i < BITMAP_SIZE - 0x1000u; ++i)
+        bitmap[0x1000u + i] = egg_bitmap[0x1000u + i];
+
+    /* KERNAL ROM remains mapped at $E000; ROM-mapped writes go to RAM below. */
+    for (i = 0; i < SCREEN_SIZE; ++i)
+        screen[i] = egg_screen[i];
+
+    /* Restore normal I/O visibility before touching Color RAM and VIC/CIA. */
+    PAW_VIC(0x01) = (unsigned char)(old_01 | 0x07);
     for (i = 0; i < COLOR_SIZE; ++i)
         color[i] = (unsigned char)(egg_color[i] & 0x0f);
 
-    /* VIC bank 3: C000 bitmap, E000 screen matrix. */
+    /* CIA2 bank 3 (DD00 bits 1:0 = 00): bitmap $C000, screen $E000. */
     PAW_VIC(0xdd02) = (unsigned char)(old_dd02 | 0x03);
     PAW_VIC(0xdd00) = (unsigned char)(old_dd00 & 0xfc);
     PAW_VIC(0xd018) = 0x80;
@@ -711,25 +731,17 @@ void paw_puppy_egg(void)
     PAW_VIC(0xd022) = 0x0a;
     PAW_VIC(0xd023) = 0x04;
     PAW_VIC(0xd016) = (unsigned char)((old_d016 & 0xef) | 0x10);
-    PAW_VIC(0xd011) = (unsigned char)((old_d011 & 0x9f) | 0x20);
+    /* D011 bit 7 is raster-high on reads and compare-high on writes. PawOS
+     * does not program a custom raster IRQ; retain the KERNAL default (0). */
+    PAW_VIC(0xd011) = (unsigned char)((old_d011 & 0x1f) | 0x20);
 
-    /* Restore normal CPU mapping and IRQs for KERNAL keyboard input. */
-    PAW_VIC(0x01) = old_01;
     asm("cli");
-
     (void)cgetc();
-
-    /* Disable IRQs while restoring underlying RAM. */
     asm("sei");
-    PAW_VIC(0xd011) = (unsigned char)(PAW_VIC(0xd011) & 0xef);
-    PAW_VIC(0x01) = 0x00;
 
-    for (i = 0; i < BITMAP_SIZE; ++i) bitmap[i] = saved_bitmap[i];
-    for (i = 0; i < SCREEN_SIZE; ++i) screen[i] = saved_screen[i];
-
-    /* Restore Color RAM with I/O visible. */
-    PAW_VIC(0x01) = 0x07;
-    for (i = 0; i < COLOR_SIZE; ++i) color[i] = saved_color[i];
+    PAW_VIC(0x01) = (unsigned char)(old_01 | 0x07);
+    for (i = 0; i < COLOR_SIZE; ++i)
+        color[i] = saved_color[i];
 
     PAW_VIC(0xdd00) = old_dd00;
     PAW_VIC(0xdd02) = old_dd02;
@@ -739,8 +751,9 @@ void paw_puppy_egg(void)
     PAW_VIC(0xd022) = old_d022;
     PAW_VIC(0xd023) = old_d023;
     PAW_VIC(0xd016) = old_d016;
-    PAW_VIC(0xd011) = old_d011;
-
+    /* Restore KERNAL's raster-compare high bit; D011 readback cannot reveal
+     * the old compare bit, and this project has no custom raster IRQ setup. */
+    PAW_VIC(0xd011) = (unsigned char)(old_d011 & 0x7f);
     PAW_VIC(0x01) = old_01;
     asm("cli");
 }
