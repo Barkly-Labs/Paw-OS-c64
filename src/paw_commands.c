@@ -156,6 +156,11 @@ void execute_command(char *command)
     }
     else if (strcmp(command, "ABOUT") == 0) show_about();
     else if (strcmp(command, "CLS") == 0) draw_screen();
+
+    else if (strcmp(command, "RADIO") == 0){
+        draw_radio_screen();
+    }
+    
     else if (strcmp(command, "SYNTH") == 0) {
     paw_sprites_clear();
     paw_synth_run();
