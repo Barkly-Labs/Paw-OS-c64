@@ -8,6 +8,8 @@
 #include "paw_synth.h"
 #include "paw_disk.h"
 #include "paw_files.h"
+#include "paw_puppy_egg.h"
+
 
 static void run_phone_command(char *command)
 {
@@ -191,6 +193,12 @@ else if (strcmp(command, "DIR") == 0 || strcmp(command, "FILES") == 0) {
         paw_files_type(command + 5);
         draw_screen();
     }
+
+    else if (strcmp(command, "PUPPY") == 0) {
+    paw_puppy_egg();
+    }
+    
+
     else if (strncmp(command, "DELETE ", 7) == 0)
         run_disk_delete(command + 7);
     else if (strncmp(command, "RENAME ", 7) == 0)

@@ -11,7 +11,8 @@ SOURCES = src/main.c \
           src/paw_synth.c \
           src/paw_disk.c \
           src/paw_files.c \
-          src/paw_commands.c
+          src/paw_commands.c \
+          src/paw_puppy_egg.c
 
 .PHONY: all clean
 

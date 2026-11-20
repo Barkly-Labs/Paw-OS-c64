@@ -4,6 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "paw.h"
+#include "paw_sid.h"
 
 int main(void)
 {
@@ -12,6 +13,7 @@ int main(void)
     unsigned char ch;
 
     boot_screen();
+    play_midi_sid();
 
     while (1) {
 

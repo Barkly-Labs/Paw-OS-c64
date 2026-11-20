@@ -206,7 +206,7 @@ void show_help(void)
     gotoxy(2, 15);
     cputs("CD TYPE DELETE RENAME PHONE DTMF DIAL");
     gotoxy(2, 16);
-    cputs("DTMFTEST MODEM SYNTH RADIO");
+    cputs("DTMFTEST MODEM SYNTH RADIO PUPPY");
 }
 
 void show_about(void)
@@ -294,7 +294,6 @@ static void draw_home_screen(unsigned char animate)
 
     gotoxy(2, 24);
     cputs("PAW>");
-    play_midi_sid();
 
 }
 
