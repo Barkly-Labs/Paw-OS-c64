@@ -14,7 +14,7 @@ void phone_dial(const char *number, unsigned char fast)
     gotoxy(2, 22);
     cputs("GENERATING TONES...                ");
 
-    if (fast) dtmf_string(number, 7, 2);
+    if (fast) dtmf_string(number, 7, 3);
     else dtmf_string(number, 12, 5);
 
     textcolor(COLOR_LIGHTGREEN);
@@ -49,4 +49,18 @@ void modem_dial_preview(const char *number)
     cputs(number);
     textcolor(COLOR_LIGHTRED);
     gotoxy(2, 23); cputs("NOT SENT: SERIAL MODEM DRIVER REQUIRED");
+}
+
+void phone_dtmf_test(void)
+{
+    textcolor(COLOR_CYAN);
+    gotoxy(2, 21);
+    cputs("DTMF KEYPAD TEST");
+    textcolor(COLOR_WHITE);
+    gotoxy(2, 22);
+    cputs("PLAYING 123A 456B 789C *0#D");
+    dtmf_string("123A456B789C*0#D", 12, 5);
+    textcolor(COLOR_LIGHTGREEN);
+    gotoxy(2, 23);
+    cputs("DTMF TEST COMPLETE                 ");
 }

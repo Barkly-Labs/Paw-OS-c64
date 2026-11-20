@@ -5,6 +5,7 @@ void rainbow(void);
 void paw_logo(void);
 void show_help(void);
 void show_about(void);
+void boot_screen(void);
 void draw_screen(void);
 void clear_output(void);
 

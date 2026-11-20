@@ -11,10 +11,7 @@ void show_memory(void)
     largest = _heapmaxavail();
 
     textcolor(COLOR_WHITE);
-
-    gotoxy(2, 13);
-    cprintf("TOTAL PHYSICAL RAM: 64 KB   ");
-
+    
     gotoxy(2, 14);
     cprintf("FREE HEAP: %u BYTES   ", total);
 
