@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "paw.h"
+#include "paw_ui.h"
 #include "paw_phone.h"
 #include "paw_synth.h"
 #include "paw_disk.h"
@@ -155,9 +156,15 @@ void execute_command(char *command)
     }
     else if (strcmp(command, "ABOUT") == 0) show_about();
     else if (strcmp(command, "CLS") == 0) draw_screen();
-    else if (strcmp(command, "SYNTH") == 0) paw_synth_run();
-    else if (strcmp(command, "DIR") == 0 || strcmp(command, "FILES") == 0)
-        paw_files_run();
+    else if (strcmp(command, "SYNTH") == 0) {
+    paw_sprites_clear();
+    paw_synth_run();
+}
+else if (strcmp(command, "DIR") == 0 || strcmp(command, "FILES") == 0) {
+    paw_sprites_clear();
+    paw_files_run();
+}
+
     else if (strcmp(command, "DISK") == 0) show_disk_status();
     else if (strncmp(command, "DISK ", 5) == 0)
         run_disk_selection(command + 5);

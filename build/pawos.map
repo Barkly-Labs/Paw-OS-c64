@@ -1,0 +1,1350 @@
+Modules list:
+-------------
+main.o:
+    CODE              Offs=000000  Size=0000C5  Align=00001  Fill=0000
+    RODATA            Offs=000000  Size=000017  Align=00001  Fill=0000
+paw_ui.o:
+    CODE              Offs=0000C5  Size=0003F4  Align=00001  Fill=0000
+    RODATA            Offs=000017  Size=0001E5  Align=00001  Fill=0000
+paw_memory.o:
+    CODE              Offs=0004B9  Size=00004F  Align=00001  Fill=0000
+    RODATA            Offs=0001FC  Size=000032  Align=00001  Fill=0000
+paw_sid.o:
+    CODE              Offs=000508  Size=0000A9  Align=00001  Fill=0000
+    RODATA            Offs=00022E  Size=000020  Align=00001  Fill=0000
+paw_dtmf.o:
+    CODE              Offs=0005B1  Size=0001FA  Align=00001  Fill=0000
+    RODATA            Offs=00024E  Size=000021  Align=00001  Fill=0000
+paw_phone.o:
+    CODE              Offs=0007AB  Size=00018F  Align=00001  Fill=0000
+    RODATA            Offs=00026F  Size=00018C  Align=00001  Fill=0000
+paw_synth.o:
+    CODE              Offs=00093A  Size=000A5A  Align=00001  Fill=0000
+    RODATA            Offs=0003FB  Size=000252  Align=00001  Fill=0000
+    BSS               Offs=000000  Size=00000B  Align=00001  Fill=0000
+    DATA              Offs=000000  Size=00002C  Align=00001  Fill=0000
+paw_disk.o:
+    CODE              Offs=001394  Size=000726  Align=00001  Fill=0000
+    RODATA            Offs=00064D  Size=000083  Align=00001  Fill=0000
+    DATA              Offs=00002C  Size=00002A  Align=00001  Fill=0000
+paw_files.o:
+    CODE              Offs=001ABA  Size=00072C  Align=00001  Fill=0000
+    RODATA            Offs=0006D0  Size=0001FE  Align=00001  Fill=0000
+    BSS               Offs=00000B  Size=0001A7  Align=00001  Fill=0000
+paw_commands.o:
+    CODE              Offs=0021E6  Size=00095F  Align=00001  Fill=0000
+    RODATA            Offs=0008CE  Size=0002EA  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(_cursor.o):
+    BSS               Offs=0001B2  Size=000001  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(_heap.o):
+    DATA              Offs=000056  Size=00000A  Align=00001  Fill=0000
+    ONCE              Offs=000000  Size=000010  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(_heapmaxavail.o):
+    CODE              Offs=002B45  Size=000053  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(_heapmemavail.o):
+    CODE              Offs=002B98  Size=00004E  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(_hextab.o):
+    RODATA            Offs=000BB8  Size=000010  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(_longminstr.o):
+    RODATA            Offs=000BC8  Size=00000C  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(_oserror.o):
+    BSS               Offs=0001B3  Size=000001  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(_printf.o):
+    CODE              Offs=002BE6  Size=0003A5  Align=00001  Fill=0000
+    BSS               Offs=0001B4  Size=00002B  Align=00001  Fill=0000
+    DATA              Offs=000060  Size=000003  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(add.o):
+    CODE              Offs=002F8B  Size=00001C  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(addeqsp.o):
+    CODE              Offs=002FA7  Size=000011  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(addysp.o):
+    CODE              Offs=002FB8  Size=00000E  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(axlong.o):
+    CODE              Offs=002FC6  Size=00000D  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(bneg.o):
+    CODE              Offs=002FD3  Size=00000E  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(c_basin.o):
+    CODE              Offs=002FE1  Size=000006  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(c_chkin.o):
+    CODE              Offs=002FE7  Size=00000A  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(c_close.o):
+    CODE              Offs=002FF1  Size=000004  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(c_clrch.o):
+/usr/share/cc65/lib/c64.lib(c_open.o):
+    CODE              Offs=002FF5  Size=000009  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(c_readst.o):
+    CODE              Offs=002FFE  Size=000006  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(c_setlfs.o):
+    CODE              Offs=003004  Size=00000E  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(c_setnam.o):
+    CODE              Offs=003012  Size=000013  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(callmain.o):
+    CODE              Offs=003025  Size=000017  Align=00001  Fill=0000
+    DATA              Offs=000063  Size=000004  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(cbm_close.o):
+/usr/share/cc65/lib/c64.lib(cbm_dir.o):
+    CODE              Offs=00303C  Size=000287  Align=00001  Fill=0000
+    RODATA            Offs=000BD4  Size=00000E  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(cbm_filetype.o):
+    CODE              Offs=0032C3  Size=000013  Align=00001  Fill=0000
+    RODATA            Offs=000BE2  Size=000014  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(cbm_open.o):
+    CODE              Offs=0032D6  Size=000016  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(cbm_read.o):
+    CODE              Offs=0032EC  Size=00005D  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(cgetc.o):
+    CODE              Offs=003349  Size=000047  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(clrscr.o):
+/usr/share/cc65/lib/c64.lib(color.o):
+    CODE              Offs=003390  Size=000010  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(compl.o):
+    CODE              Offs=0033A0  Size=000009  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(condes.o):
+    CODE              Offs=0033A9  Size=00000C  Align=00001  Fill=0000
+    DATA              Offs=000067  Size=000025  Align=00001  Fill=0000
+    ONCE              Offs=000010  Size=00000C  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(conio.o):
+/usr/share/cc65/lib/c64.lib(cprintf.o):
+    CODE              Offs=0033B5  Size=00002A  Align=00001  Fill=0000
+    BSS               Offs=0001DF  Size=000001  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(cputc.o):
+    CODE              Offs=0033DF  Size=00006F  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(cputs.o):
+    CODE              Offs=00344E  Size=000023  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(crt0.o):
+    STARTUP           Offs=000000  Size=000033  Align=00001  Fill=0000
+    ONCE              Offs=00001C  Size=00001A  Align=00001  Fill=0000
+    INIT              Offs=000000  Size=00001C  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(ctype.o):
+    RODATA            Offs=000BF6  Size=00008B  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(ctypemask.o):
+    CODE              Offs=003471  Size=00001E  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(decax1.o):
+    CODE              Offs=00348F  Size=000007  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(decax2.o):
+    CODE              Offs=003496  Size=000007  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(decaxy.o):
+    CODE              Offs=00349D  Size=000009  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(decsp1.o):
+    CODE              Offs=0034A6  Size=000009  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(decsp2.o):
+    CODE              Offs=0034AF  Size=00000D  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(decsp3.o):
+    CODE              Offs=0034BC  Size=00000D  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(decsp4.o):
+    CODE              Offs=0034C9  Size=00000D  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(decsp5.o):
+    CODE              Offs=0034D6  Size=00000D  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(decsp6.o):
+    CODE              Offs=0034E3  Size=00000D  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(decsp7.o):
+    CODE              Offs=0034F0  Size=00000D  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(enter.o):
+    CODE              Offs=0034FD  Size=00000E  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(exehdr.o):
+    EXEHDR            Offs=000000  Size=00000C  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(gotoxy.o):
+    CODE              Offs=00350B  Size=00000D  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(icmp.o):
+    CODE              Offs=003518  Size=00002E  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(incax1.o):
+    CODE              Offs=003546  Size=000007  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(incax3.o):
+    CODE              Offs=00354D  Size=000005  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(incax5.o):
+    CODE              Offs=003552  Size=000005  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(incax7.o):
+    CODE              Offs=003557  Size=000005  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(incaxy.o):
+    CODE              Offs=00355C  Size=00000B  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(incsp1.o):
+    CODE              Offs=003567  Size=000007  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(incsp2.o):
+    CODE              Offs=00356E  Size=000016  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(incsp3.o):
+    CODE              Offs=003584  Size=000005  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(incsp4.o):
+    CODE              Offs=003589  Size=000005  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(incsp5.o):
+    CODE              Offs=00358E  Size=000005  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(incsp6.o):
+    CODE              Offs=003593  Size=000005  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(incsp7.o):
+    CODE              Offs=003598  Size=000005  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(kbhit.o):
+    CODE              Offs=00359D  Size=000009  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(kernal.o):
+/usr/share/cc65/lib/c64.lib(kplot.o):
+    CODE              Offs=0035A6  Size=00000B  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(ldaxi.o):
+    CODE              Offs=0035B1  Size=00000D  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(ldaxsp.o):
+    CODE              Offs=0035BE  Size=000009  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(leaaxsp.o):
+    CODE              Offs=0035C7  Size=00000C  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(leave.o):
+    CODE              Offs=0035D3  Size=00001D  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(lneg.o):
+    CODE              Offs=0035F0  Size=00001E  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(loadaddr.o):
+    LOADADDR          Offs=000000  Size=000002  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(lpush.o):
+    CODE              Offs=00360E  Size=000021  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(ltoa.o):
+    CODE              Offs=00362F  Size=000095  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(makebool.o):
+    CODE              Offs=0036C4  Size=00002C  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(memcpy.o):
+    CODE              Offs=0036F0  Size=00003C  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(mul8.o):
+    CODE              Offs=00372C  Size=00003A  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(mulax10.o):
+    CODE              Offs=003766  Size=000019  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(or.o):
+    CODE              Offs=00377F  Size=000012  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(popa.o):
+    CODE              Offs=003791  Size=00000C  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(popptr1.o):
+    CODE              Offs=00379D  Size=00000E  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(push1.o):
+    CODE              Offs=0037AB  Size=000005  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(pusha.o):
+    CODE              Offs=0037B0  Size=000016  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(pushax.o):
+    CODE              Offs=0037C6  Size=00001A  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(pushw.o):
+    CODE              Offs=0037E0  Size=00000F  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(pushwsp.o):
+    CODE              Offs=0037EF  Size=00001C  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(regswap2.o):
+    CODE              Offs=00380B  Size=000016  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(revers.o):
+    CODE              Offs=003821  Size=000014  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(shl.o):
+    CODE              Offs=003835  Size=000033  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(staspidx.o):
+    CODE              Offs=003868  Size=000016  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(status.o):
+/usr/share/cc65/lib/c64.lib(staxsp.o):
+    CODE              Offs=00387E  Size=00000B  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(staxspi.o):
+    CODE              Offs=003889  Size=00001B  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(strchr.o):
+    CODE              Offs=0038A4  Size=000027  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(strcmp.o):
+    CODE              Offs=0038CB  Size=000021  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(strcpy.o):
+    CODE              Offs=0038EC  Size=00001F  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(strlen.o):
+    CODE              Offs=00390B  Size=000016  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(strlower.o):
+    CODE              Offs=003921  Size=000027  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(strncmp.o):
+    CODE              Offs=003948  Size=000039  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(strncpy.o):
+    CODE              Offs=003981  Size=000044  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(subeqsp.o):
+    CODE              Offs=0039C5  Size=000015  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(subysp.o):
+    CODE              Offs=0039DA  Size=00000D  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(toupper.o):
+    CODE              Offs=0039E7  Size=000012  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(udiv.o):
+    CODE              Offs=0039F9  Size=00004F  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(umod.o):
+    CODE              Offs=003A48  Size=000011  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(vcprintf.o):
+    CODE              Offs=003A59  Size=00007A  Align=00001  Fill=0000
+    DATA              Offs=00008C  Size=000008  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(waitvsync.o):
+    CODE              Offs=003AD3  Size=00000B  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(zerobss.o):
+    CODE              Offs=003ADE  Size=000023  Align=00001  Fill=0000
+/usr/share/cc65/lib/c64.lib(zeropage.o):
+    ZEROPAGE          Offs=000000  Size=00001A  Align=00001  Fill=0000
+
+
+Segment list:
+-------------
+Name                   Start     End    Size  Align
+----------------------------------------------------
+ZEROPAGE              000002  00001B  00001A  00001
+LOADADDR              0007FF  000800  000002  00001
+EXEHDR                000801  00080C  00000C  00001
+STARTUP               00080D  00083F  000033  00001
+CODE                  000840  004340  003B01  00001
+RODATA                004341  004FC1  000C81  00001
+DATA                  004FC2  005055  000094  00001
+INIT                  005056  005071  00001C  00001
+BSS                   005072  005251  0001E0  00001
+ONCE                  005072  0050A9  000038  00001
+
+
+Exports list by name:
+---------------------
+BASIN                     00FFCF RLA    BSOUT                     00FFD2 RLA    
+CHKIN                     00FFC6 RLA    CLOSE                     00FFC3 RLA    
+CLRCH                     00FFCC RLA    CURS_X                    0000D3 RLZ    
+CURS_Y                    0000D6 RLZ    OPEN                      00FFC0 RLA    
+PLOT                      003DE6 RLA    READST                    00FFB7 RLA    
+SETLFS                    00FFBA RLA    SETNAM                    00FFBD RLA    
+ST                        000090 RLZ    __BSS_RUN__               005072 RLA    
+__BSS_SIZE__              0001E0 REA    __CONSTRUCTOR_COUNT__     000001 REA    
+__CONSTRUCTOR_TABLE__     0050A8 RLA    __DESTRUCTOR_COUNT__      000000 REA    
+__DESTRUCTOR_TABLE__      004FC2 RLA    __EXEHDR__                000001 REA    
+__HEADER_LAST__           00080D RLA    __HIMEM__                 00D000 REA    
+__LOADADDR__              000001 REA    __MAIN_SIZE__             00C7F3 REA    
+__MAIN_START__            00080D RLA    __ONCE_RUN__              005072 RLA    
+__STACKSIZE__             000800 REA    __STARTUP__               000001 REA    
+__cbm_filetype            003B03 RLA    __ctype                   004F37 RLA    
+__ctypeidx                004F42 RLA    __heapend                 00501C RLA    
+__heapfirst               00501E RLA    __heapmaxavail            003385 RLA    
+__heapmemavail            0033D8 RLA    __heapptr                 00501A RLA    
+__hextab                  004EF9 RLA    __longminstr              004F09 RLA    
+__oserror                 005225 RLA    __printf                  003519 RLA    
+_boot_screen              000AD2 RLA    _cbm_close                003831 REA    
+_cbm_closedir             003AF6 RLA    _cbm_k_basin              003821 RLA    
+_cbm_k_chkin              003827 RLA    _cbm_k_close              003831 RLA    
+_cbm_k_clrch              00FFCC REA    _cbm_k_open               003835 RLA    
+_cbm_k_readst             00383E RLA    _cbm_k_setlfs             003844 RLA    
+_cbm_k_setnam             003852 RLA    _cbm_open                 003B16 RLA    
+_cbm_opendir              00387C RLA    _cbm_read                 003B2C RLA    
+_cbm_readdir              003934 RLA    _cgetc                    003B89 RLA    
+_clear_output             000972 RLA    _clrscr                   00E544 REA    
+_cprintf                  003BF5 RLA    _cputc                    003C24 RLA    
+_cputs                    003C98 RLA    _draw_screen              000AD7 RLA    
+_dtmf_string              000F02 RLA    _execute_command          002A26 RLA    
+_gotoxy                   003D4E RLA    _kbhit                    003DDD RLA    
+_ltoa                     003E87 RLA    _main                     000840 RLA    
+_memcpy                   003F30 RLA    _modem_dial_preview       00112C RLA    
+_modem_help               0010EF RLA    _paw_disk_close_seq       00207A RLA    
+_paw_disk_delete          001E4B RLA    _paw_disk_device          001BD4 RLA    
+_paw_disk_filename_valid  00207F RLA    _paw_disk_last_status     002147 RLA    
+_paw_disk_open_seq        00200B RLA    _paw_disk_read_directory  001CC3 RLA    
+_paw_disk_read_seq        002062 RLA    _paw_disk_read_status     001BFB RLA    
+_paw_disk_rename          001EF3 RLA    _paw_disk_set_device      001BDA RLA    
+_paw_files_run            0022FA RLA    _paw_files_type           002394 RLA    
+_paw_sprites_clear        000B77 RLA    _paw_synth_run            00117A RLA    
+_phone_dial               000FEB RLA    _phone_dtmf_test          00105F RLA    
+_phone_help               0010B2 RLA    _play_ode_to_joy          000D48 RLA    
+_revers                   004061 RLA    _show_about               000A11 RLA    
+_show_help                0009A4 RLA    _show_memory              000CF9 RLA    
+_strchr                   0040E4 RLA    _strcmp                   00410B RLA    
+_strcpy                   00412C RLA    _strlen                   00414B RLA    
+_strlower                 004161 RLA    _strncmp                  004188 RLA    
+_strncpy                  0041C1 RLA    _textcolor                003BD0 RLA    
+_toupper                  004227 RLA    _ultoa                    003EC8 RLA    
+_vcprintf                 0042E3 RLA    _waitvsync                004313 RLA    
+addeqysp                  0037E9 RLA    addysp                    0037F9 RLA    
+addysp1                   0037F8 RLA    aslaxy                    00407C RLA    
+axlong                    003806 RLA    axulong                   00380C RLA    
+bnega                     003817 RLA    booleq                    003F0A RLA    
+callmain                  003865 RLA    complax                   003BE0 RLA    
+ctypemaskdirect           003CB5 RLA    cursor                    005224 RLA    
+decax1                    003CCF RLA    decax2                    003CD6 RLA    
+decaxy                    003CDD RLA    decsp1                    003CE6 RLA    
+decsp2                    003CEF RLA    decsp3                    003CFC RLA    
+decsp4                    003D09 RLA    decsp5                    003D16 RLA    
+decsp6                    003D23 RLA    decsp7                    003D30 RLA    
+donelib                   003BE9 RLA    enter                     003D3D RLA    
+gotoxy                    003D4B RLA    incax1                    003D86 RLA    
+incax3                    003D8D RLA    incax4                    003D9C RLA    
+incax5                    003D92 RLA    incax7                    003D97 RLA    
+incaxy                    003D9E RLA    incsp1                    003DA7 RLA    
+incsp2                    003DB6 RLA    incsp3                    003DC4 RLA    
+incsp4                    003DC9 RLA    incsp5                    003DCE RLA    
+incsp6                    003DD3 RLA    incsp7                    003DD8 RLA    
+initheap                  005072  LAI   initlib                   005082 RLA    
+ldax0sp                   003DFE RLA    ldaxi                     003DF1 RLA    
+ldaxysp                   003E00 RLA    leaa0sp                   003E07 RLA    
+leavey                    003E1D RLA    mulax10                   003FA6 RLA    
+negeax                    003E30 RLA    plot                      003C7A RLA    
+popa                      003FD1 RLA    popax                     003DAE RLA    
+popptr1                   003FDD RLA    ptr1                      00000A RLZ    
+ptr2                      00000C RLZ    ptr3                      00000E RLZ    
+ptr4                      000010 RLZ    push1                     003FEB RLA    
+pusha                     003FF4 RLA    pusha0                    004008 RLA    
+pushax                    00400A RLA    pusheax                   003E57 RLA    
+pushw0sp                  00402F RLA    pushwidx                  004022 RLA    
+pushwysp                  004031 RLA    regbank                   000016 RLZ    
+regsave                   000006 RLZ    regswap2                  00404B RLA    
+sp                        000002 RLZ    sreg                      000004 RLZ    
+staspidx                  0040A8 RLA    stax0sp                   0040BE RLA    
+staxspidx                 0040C9 RLA    staxysp                   0040C0 RLA    
+subeqysp                  004207 RLA    subysp                    00421A RLA    
+tmp1                      000012 RLZ    tmp2                      000013 RLZ    
+tmp3                      000014 RLZ    tosaddax                  0037CD RLA    
+tosicmp0                  003D58 RLA    tosmula0                  003F6C RLA    
+tosorax                   003FC1 RLA    tosumoda0                 004288 RLA    
+udiv16                    00424A RLA    zerobss                   00431E RLA    
+
+
+
+Exports list by value:
+----------------------
+__DESTRUCTOR_COUNT__      000000 REA    __CONSTRUCTOR_COUNT__     000001 REA    
+__EXEHDR__                000001 REA    __LOADADDR__              000001 REA    
+__STARTUP__               000001 REA    sp                        000002 RLZ    
+sreg                      000004 RLZ    regsave                   000006 RLZ    
+ptr1                      00000A RLZ    ptr2                      00000C RLZ    
+ptr3                      00000E RLZ    ptr4                      000010 RLZ    
+tmp1                      000012 RLZ    tmp2                      000013 RLZ    
+tmp3                      000014 RLZ    regbank                   000016 RLZ    
+ST                        000090 RLZ    CURS_X                    0000D3 RLZ    
+CURS_Y                    0000D6 RLZ    __BSS_SIZE__              0001E0 REA    
+__STACKSIZE__             000800 REA    __HEADER_LAST__           00080D RLA    
+__MAIN_START__            00080D RLA    _main                     000840 RLA    
+_clear_output             000972 RLA    _show_help                0009A4 RLA    
+_show_about               000A11 RLA    _boot_screen              000AD2 RLA    
+_draw_screen              000AD7 RLA    _paw_sprites_clear        000B77 RLA    
+_show_memory              000CF9 RLA    _play_ode_to_joy          000D48 RLA    
+_dtmf_string              000F02 RLA    _phone_dial               000FEB RLA    
+_phone_dtmf_test          00105F RLA    _phone_help               0010B2 RLA    
+_modem_help               0010EF RLA    _modem_dial_preview       00112C RLA    
+_paw_synth_run            00117A RLA    _paw_disk_device          001BD4 RLA    
+_paw_disk_set_device      001BDA RLA    _paw_disk_read_status     001BFB RLA    
+_paw_disk_read_directory  001CC3 RLA    _paw_disk_delete          001E4B RLA    
+_paw_disk_rename          001EF3 RLA    _paw_disk_open_seq        00200B RLA    
+_paw_disk_read_seq        002062 RLA    _paw_disk_close_seq       00207A RLA    
+_paw_disk_filename_valid  00207F RLA    _paw_disk_last_status     002147 RLA    
+_paw_files_run            0022FA RLA    _paw_files_type           002394 RLA    
+_execute_command          002A26 RLA    __heapmaxavail            003385 RLA    
+__heapmemavail            0033D8 RLA    __printf                  003519 RLA    
+tosaddax                  0037CD RLA    addeqysp                  0037E9 RLA    
+addysp1                   0037F8 RLA    addysp                    0037F9 RLA    
+axlong                    003806 RLA    axulong                   00380C RLA    
+bnega                     003817 RLA    _cbm_k_basin              003821 RLA    
+_cbm_k_chkin              003827 RLA    _cbm_close                003831 REA    
+_cbm_k_close              003831 RLA    _cbm_k_open               003835 RLA    
+_cbm_k_readst             00383E RLA    _cbm_k_setlfs             003844 RLA    
+_cbm_k_setnam             003852 RLA    callmain                  003865 RLA    
+_cbm_opendir              00387C RLA    _cbm_readdir              003934 RLA    
+_cbm_closedir             003AF6 RLA    __cbm_filetype            003B03 RLA    
+_cbm_open                 003B16 RLA    _cbm_read                 003B2C RLA    
+_cgetc                    003B89 RLA    _textcolor                003BD0 RLA    
+complax                   003BE0 RLA    donelib                   003BE9 RLA    
+_cprintf                  003BF5 RLA    _cputc                    003C24 RLA    
+plot                      003C7A RLA    _cputs                    003C98 RLA    
+ctypemaskdirect           003CB5 RLA    decax1                    003CCF RLA    
+decax2                    003CD6 RLA    decaxy                    003CDD RLA    
+decsp1                    003CE6 RLA    decsp2                    003CEF RLA    
+decsp3                    003CFC RLA    decsp4                    003D09 RLA    
+decsp5                    003D16 RLA    decsp6                    003D23 RLA    
+decsp7                    003D30 RLA    enter                     003D3D RLA    
+gotoxy                    003D4B RLA    _gotoxy                   003D4E RLA    
+tosicmp0                  003D58 RLA    incax1                    003D86 RLA    
+incax3                    003D8D RLA    incax5                    003D92 RLA    
+incax7                    003D97 RLA    incax4                    003D9C RLA    
+incaxy                    003D9E RLA    incsp1                    003DA7 RLA    
+popax                     003DAE RLA    incsp2                    003DB6 RLA    
+incsp3                    003DC4 RLA    incsp4                    003DC9 RLA    
+incsp5                    003DCE RLA    incsp6                    003DD3 RLA    
+incsp7                    003DD8 RLA    _kbhit                    003DDD RLA    
+PLOT                      003DE6 RLA    ldaxi                     003DF1 RLA    
+ldax0sp                   003DFE RLA    ldaxysp                   003E00 RLA    
+leaa0sp                   003E07 RLA    leavey                    003E1D RLA    
+negeax                    003E30 RLA    pusheax                   003E57 RLA    
+_ltoa                     003E87 RLA    _ultoa                    003EC8 RLA    
+booleq                    003F0A RLA    _memcpy                   003F30 RLA    
+tosmula0                  003F6C RLA    mulax10                   003FA6 RLA    
+tosorax                   003FC1 RLA    popa                      003FD1 RLA    
+popptr1                   003FDD RLA    push1                     003FEB RLA    
+pusha                     003FF4 RLA    pusha0                    004008 RLA    
+pushax                    00400A RLA    pushwidx                  004022 RLA    
+pushw0sp                  00402F RLA    pushwysp                  004031 RLA    
+regswap2                  00404B RLA    _revers                   004061 RLA    
+aslaxy                    00407C RLA    staspidx                  0040A8 RLA    
+stax0sp                   0040BE RLA    staxysp                   0040C0 RLA    
+staxspidx                 0040C9 RLA    _strchr                   0040E4 RLA    
+_strcmp                   00410B RLA    _strcpy                   00412C RLA    
+_strlen                   00414B RLA    _strlower                 004161 RLA    
+_strncmp                  004188 RLA    _strncpy                  0041C1 RLA    
+subeqysp                  004207 RLA    subysp                    00421A RLA    
+_toupper                  004227 RLA    udiv16                    00424A RLA    
+tosumoda0                 004288 RLA    _vcprintf                 0042E3 RLA    
+_waitvsync                004313 RLA    zerobss                   00431E RLA    
+__hextab                  004EF9 RLA    __longminstr              004F09 RLA    
+__ctype                   004F37 RLA    __ctypeidx                004F42 RLA    
+__DESTRUCTOR_TABLE__      004FC2 RLA    __heapptr                 00501A RLA    
+__heapend                 00501C RLA    __heapfirst               00501E RLA    
+__BSS_RUN__               005072 RLA    __ONCE_RUN__              005072 RLA    
+initheap                  005072  LAI   initlib                   005082 RLA    
+__CONSTRUCTOR_TABLE__     0050A8 RLA    cursor                    005224 RLA    
+__oserror                 005225 RLA    __MAIN_SIZE__             00C7F3 REA    
+__HIMEM__                 00D000 REA    _clrscr                   00E544 REA    
+READST                    00FFB7 RLA    SETLFS                    00FFBA RLA    
+SETNAM                    00FFBD RLA    OPEN                      00FFC0 RLA    
+CLOSE                     00FFC3 RLA    CHKIN                     00FFC6 RLA    
+CLRCH                     00FFCC RLA    _cbm_k_clrch              00FFCC REA    
+BASIN                     00FFCF RLA    BSOUT                     00FFD2 RLA    
+
+
+
+Imports list:
+-------------
+BASIN (kernal.o):
+    c_basin.o                 cbm/cbm.inc(47)
+    cbm_read.o                cbm/cbm.inc(47)
+BSOUT (kernal.o):
+    crt0.o                    c64/crt0.s(10)
+CHKIN (kernal.o):
+    c_chkin.o                 cbm/cbm.inc(44)
+    cbm_read.o                cbm/cbm.inc(44)
+CLOSE (kernal.o):
+    c_close.o                 cbm/cbm.inc(36)
+CLRCH (kernal.o):
+    c_clrch.o                 cbm/cbm.inc(46)
+    cbm_read.o                cbm/cbm.inc(46)
+CURS_X (conio.o):
+    gotoxy.o                  cbm/gotoxy.s(9)
+CURS_Y (conio.o):
+    gotoxy.o                  cbm/gotoxy.s(9)
+OPEN (kernal.o):
+    c_open.o                  cbm/cbm.inc(35)
+PLOT (kplot.o):
+    cputc.o                   c64/cputc.s(11)
+READST (kernal.o):
+    c_readst.o                cbm/cbm.inc(32)
+    cbm_read.o                cbm/cbm.inc(32)
+SETLFS (kernal.o):
+    c_setlfs.o                cbm/cbm.inc(33)
+SETNAM (kernal.o):
+    c_setnam.o                cbm/cbm.inc(34)
+ST (status.o):
+    crt0.o                    c64/crt0.s(13)
+__BSS_RUN__ ([linker generated]):
+    _heap.o                   common/_heap.s(8)
+    zerobss.o                 common/zerobss.s(8)
+__BSS_SIZE__ ([linker generated]):
+    _heap.o                   common/_heap.s(8)
+    zerobss.o                 common/zerobss.s(8)
+__CONSTRUCTOR_COUNT__ ([linker generated]):
+    condes.o                  runtime/condes.s(18)
+__CONSTRUCTOR_TABLE__ ([linker generated]):
+    condes.o                  runtime/condes.s(18)
+__DESTRUCTOR_COUNT__ ([linker generated]):
+    condes.o                  runtime/condes.s(19)
+__DESTRUCTOR_TABLE__ ([linker generated]):
+    condes.o                  runtime/condes.s(19)
+__EXEHDR__ (exehdr.o):
+    [linker generated]        /usr/share/cc65/cfg/c64.cfg(6)
+__HEADER_LAST__ ([linker generated]):
+    [linker generated]        /usr/share/cc65/cfg/c64.cfg(14)
+    [linker generated]        /usr/share/cc65/cfg/c64.cfg(14)
+__HIMEM__ ([linker generated]):
+    [linker generated]        /usr/share/cc65/cfg/c64.cfg(15)
+    [linker generated]        /usr/share/cc65/cfg/c64.cfg(14)
+__LOADADDR__ (loadaddr.o):
+    [linker generated]        /usr/share/cc65/cfg/c64.cfg(5)
+__MAIN_SIZE__ ([linker generated]):
+    crt0.o                    c64/crt0.s(11)
+__MAIN_START__ ([linker generated]):
+    crt0.o                    c64/crt0.s(11)
+__ONCE_RUN__ ([linker generated]):
+    [linker generated]        /usr/share/cc65/cfg/c64.cfg(15)
+    [linker generated]        /usr/share/cc65/cfg/c64.cfg(15)
+__STACKSIZE__ ([linker generated]):
+    _heap.o                   common/_heap.s(8)
+    [linker generated]        /usr/share/cc65/cfg/c64.cfg(15)
+__STARTUP__ (crt0.o):
+    main.o                    src/main.s(13)
+__cbm_filetype (cbm_filetype.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(13)
+__ctype (ctype.o):
+    ctypemask.o               common/ctypemask.s(23)
+__ctypeidx (ctype.o):
+    ctypemask.o               common/ctypemask.s(24)
+__heapend (_heap.o):
+    _heapmemavail.o           /build/cc65-MvQrHe/cc65-2.19/asminc/_heap.inc(33)
+    _heapmaxavail.o           /build/cc65-MvQrHe/cc65-2.19/asminc/_heap.inc(33)
+__heapfirst (_heap.o):
+    _heapmemavail.o           /build/cc65-MvQrHe/cc65-2.19/asminc/_heap.inc(34)
+    _heapmaxavail.o           /build/cc65-MvQrHe/cc65-2.19/asminc/_heap.inc(34)
+__heapmaxavail (_heapmaxavail.o):
+    paw_memory.o              src/paw_memory.s(17)
+__heapmemavail (_heapmemavail.o):
+    paw_memory.o              src/paw_memory.s(16)
+__heapptr (_heap.o):
+    _heapmemavail.o           /build/cc65-MvQrHe/cc65-2.19/asminc/_heap.inc(32)
+    _heapmaxavail.o           /build/cc65-MvQrHe/cc65-2.19/asminc/_heap.inc(32)
+__hextab (_hextab.o):
+    ltoa.o                    common/ltoa.s(10)
+__longminstr (_longminstr.o):
+    ltoa.o                    common/ltoa.s(10)
+__oserror (_oserror.o):
+    cbm_read.o                cbm/cbm_read.s(44)
+    cbm_open.o                cbm/cbm_open.s(24)
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(23)
+__printf (_printf.o):
+    vcprintf.o                conio/vcprintf.s(9)
+_boot_screen (paw_ui.o):
+    main.o                    src/main.s(19)
+_cbm_close (cbm_close.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(19)
+    paw_disk.o                src/paw_disk.s(17)
+_cbm_closedir (cbm_dir.o):
+    paw_disk.o                src/paw_disk.s(21)
+_cbm_k_basin (c_basin.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(14)
+_cbm_k_chkin (c_chkin.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(15)
+_cbm_k_close (c_close.o):
+    cbm_close.o               cbm/cbm_close.s(7)
+_cbm_k_clrch (c_clrch.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(16)
+_cbm_k_open (c_open.o):
+    cbm_open.o                cbm/cbm_open.s(23)
+_cbm_k_readst (c_readst.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(17)
+_cbm_k_setlfs (c_setlfs.o):
+    cbm_open.o                cbm/cbm_open.s(23)
+_cbm_k_setnam (c_setnam.o):
+    cbm_open.o                cbm/cbm_open.s(23)
+_cbm_open (cbm_open.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(18)
+    paw_disk.o                src/paw_disk.s(16)
+_cbm_opendir (cbm_dir.o):
+    paw_disk.o                src/paw_disk.s(19)
+_cbm_read (cbm_read.o):
+    paw_disk.o                src/paw_disk.s(18)
+_cbm_readdir (cbm_dir.o):
+    paw_disk.o                src/paw_disk.s(20)
+_cgetc (cgetc.o):
+    paw_commands.o            src/paw_commands.s(16)
+    paw_files.o               src/paw_files.s(20)
+    paw_synth.o               src/paw_synth.s(20)
+    main.o                    src/main.s(17)
+_clear_output (paw_ui.o):
+    paw_commands.o            src/paw_commands.s(22)
+_clrscr (clrscr.o):
+    paw_files.o               src/paw_files.s(14)
+    paw_synth.o               src/paw_synth.s(14)
+    paw_ui.o                  src/paw_ui.s(14)
+_cprintf (cprintf.o):
+    paw_commands.o            src/paw_commands.s(15)
+    paw_files.o               src/paw_files.s(19)
+    paw_synth.o               src/paw_synth.s(19)
+    paw_memory.o              src/paw_memory.s(14)
+_cputc (cputc.o):
+    vcprintf.o                conio/vcprintf.s(9)
+    cputs.o                   conio/cputs.s(9)
+    paw_files.o               src/paw_files.s(17)
+    paw_synth.o               src/paw_synth.s(17)
+    paw_ui.o                  src/paw_ui.s(16)
+    main.o                    src/main.s(15)
+_cputs (cputs.o):
+    paw_commands.o            src/paw_commands.s(14)
+    paw_files.o               src/paw_files.s(18)
+    paw_synth.o               src/paw_synth.s(18)
+    paw_phone.o               src/paw_phone.s(14)
+    paw_ui.o                  src/paw_ui.s(17)
+    main.o                    src/main.s(16)
+_draw_screen (paw_ui.o):
+    paw_commands.o            src/paw_commands.s(25)
+    paw_files.o               src/paw_files.s(26)
+_dtmf_string (paw_dtmf.o):
+    paw_phone.o               src/paw_phone.s(16)
+_execute_command (paw_commands.o):
+    main.o                    src/main.s(20)
+_gotoxy (gotoxy.o):
+    paw_commands.o            src/paw_commands.s(13)
+    paw_files.o               src/paw_files.s(16)
+    paw_synth.o               src/paw_synth.s(16)
+    paw_phone.o               src/paw_phone.s(13)
+    paw_memory.o              src/paw_memory.s(13)
+    paw_ui.o                  src/paw_ui.s(15)
+    main.o                    src/main.s(14)
+_kbhit (kbhit.o):
+    paw_files.o               src/paw_files.s(15)
+    paw_synth.o               src/paw_synth.s(15)
+_ltoa (ltoa.o):
+    _printf.o                 common/_printf.s(12)
+_main (main.o):
+    callmain.o                runtime/callmain.s(11)
+_memcpy (memcpy.o):
+    paw_disk.o                src/paw_disk.s(1132)
+_modem_dial_preview (paw_phone.o):
+    paw_commands.o            src/paw_commands.s(32)
+_modem_help (paw_phone.o):
+    paw_commands.o            src/paw_commands.s(31)
+_paw_disk_close_seq (paw_disk.o):
+    paw_files.o               src/paw_files.s(32)
+_paw_disk_delete (paw_disk.o):
+    paw_commands.o            src/paw_commands.s(37)
+    paw_files.o               src/paw_files.s(29)
+_paw_disk_device (paw_disk.o):
+    paw_commands.o            src/paw_commands.s(34)
+    paw_files.o               src/paw_files.s(27)
+_paw_disk_filename_valid (paw_disk.o):
+    paw_commands.o            src/paw_commands.s(39)
+    paw_files.o               src/paw_files.s(33)
+_paw_disk_last_status (paw_disk.o):
+    paw_commands.o            src/paw_commands.s(40)
+    paw_files.o               src/paw_files.s(34)
+_paw_disk_open_seq (paw_disk.o):
+    paw_files.o               src/paw_files.s(30)
+_paw_disk_read_directory (paw_disk.o):
+    paw_files.o               src/paw_files.s(28)
+_paw_disk_read_seq (paw_disk.o):
+    paw_files.o               src/paw_files.s(31)
+_paw_disk_read_status (paw_disk.o):
+    paw_commands.o            src/paw_commands.s(36)
+_paw_disk_rename (paw_disk.o):
+    paw_commands.o            src/paw_commands.s(38)
+_paw_disk_set_device (paw_disk.o):
+    paw_commands.o            src/paw_commands.s(35)
+_paw_files_run (paw_files.o):
+    paw_commands.o            src/paw_commands.s(41)
+_paw_files_type (paw_files.o):
+    paw_commands.o            src/paw_commands.s(42)
+_paw_sprites_clear (paw_ui.o):
+    paw_commands.o            src/paw_commands.s(27)
+_paw_synth_run (paw_synth.o):
+    paw_commands.o            src/paw_commands.s(33)
+_phone_dial (paw_phone.o):
+    paw_commands.o            src/paw_commands.s(28)
+_phone_dtmf_test (paw_phone.o):
+    paw_commands.o            src/paw_commands.s(29)
+_phone_help (paw_phone.o):
+    paw_commands.o            src/paw_commands.s(30)
+_play_ode_to_joy (paw_sid.o):
+    paw_ui.o                  src/paw_ui.s(20)
+_revers (revers.o):
+    paw_ui.o                  src/paw_ui.s(18)
+_show_about (paw_ui.o):
+    paw_commands.o            src/paw_commands.s(24)
+_show_help (paw_ui.o):
+    paw_commands.o            src/paw_commands.s(23)
+_show_memory (paw_memory.o):
+    paw_commands.o            src/paw_commands.s(21)
+    paw_ui.o                  src/paw_ui.s(22)
+_strchr (strchr.o):
+    paw_synth.o               src/paw_synth.s(23)
+    paw_dtmf.o                src/paw_dtmf.s(13)
+_strcmp (strcmp.o):
+    paw_commands.o            src/paw_commands.s(19)
+    paw_synth.o               src/paw_synth.s(24)
+_strcpy (strcpy.o):
+    paw_files.o               src/paw_files.s(23)
+    paw_disk.o                src/paw_disk.s(14)
+_strlen (strlen.o):
+    _printf.o                 common/_printf.s(13)
+    paw_files.o               src/paw_files.s(24)
+_strlower (strlower.o):
+    _printf.o                 common/_printf.s(13)
+_strncmp (strncmp.o):
+    paw_commands.o            src/paw_commands.s(20)
+_strncpy (strncpy.o):
+    paw_files.o               src/paw_files.s(25)
+    paw_disk.o                src/paw_disk.s(15)
+_textcolor (color.o):
+    paw_commands.o            src/paw_commands.s(17)
+    paw_files.o               src/paw_files.s(21)
+    paw_synth.o               src/paw_synth.s(21)
+    paw_phone.o               src/paw_phone.s(15)
+    paw_memory.o              src/paw_memory.s(15)
+    paw_ui.o                  src/paw_ui.s(19)
+_toupper (toupper.o):
+    paw_commands.o            src/paw_commands.s(18)
+    paw_files.o               src/paw_files.s(22)
+    paw_disk.o                src/paw_disk.s(13)
+    paw_synth.o               src/paw_synth.s(22)
+    main.o                    src/main.s(18)
+_ultoa (ltoa.o):
+    _printf.o                 common/_printf.s(12)
+_vcprintf (vcprintf.o):
+    cprintf.o                 conio/cprintf.s(8)
+_waitvsync (waitvsync.o):
+    paw_files.o               src/paw_files.s(13)
+    paw_synth.o               src/paw_synth.s(13)
+    paw_dtmf.o                src/paw_dtmf.s(14)
+    paw_sid.o                 src/paw_sid.s(13)
+    paw_ui.o                  src/paw_ui.s(13)
+addeqysp (addeqsp.o):
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_dtmf.o                src/paw_dtmf.s(320)
+addysp (addysp.o):
+    leave.o                   runtime/leave.s(14)
+    incsp7.o                  runtime/incsp7.s(8)
+    incsp6.o                  runtime/incsp6.s(8)
+    incsp5.o                  runtime/incsp5.s(8)
+    incsp4.o                  runtime/incsp4.s(8)
+    incsp3.o                  runtime/incsp3.s(8)
+    cprintf.o                 conio/cprintf.s(8)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_dtmf.o                src/paw_dtmf.s(320)
+addysp1 (addysp.o):
+    or.o                      runtime/or.s(9)
+aslaxy (shl.o):
+    paw_ui.o                  src/paw_ui.s(763)
+axlong (axlong.o):
+    _printf.o                 common/_printf.s(11)
+axulong (axlong.o):
+    _printf.o                 common/_printf.s(11)
+bnega (bneg.o):
+    paw_disk.o                src/paw_disk.s(1132)
+booleq (makebool.o):
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+callmain (callmain.o):
+    crt0.o                    c64/crt0.s(9)
+complax (compl.o):
+    paw_files.o               src/paw_files.s(1083)
+    paw_synth.o               src/paw_synth.s(1561)
+ctypemaskdirect (ctypemask.o):
+    strlower.o                common/strlower.s(14)
+    toupper.o                 common/toupper.s(15)
+cursor (_cursor.o):
+    cgetc.o                   c64/cgetc.s(8)
+decax1 (decax1.o):
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+decax2 (decax2.o):
+    paw_synth.o               src/paw_synth.s(1561)
+decaxy (decaxy.o):
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+decsp1 (decsp1.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_dtmf.o                src/paw_dtmf.s(320)
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+decsp2 (decsp2.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_ui.o                  src/paw_ui.s(763)
+decsp3 (decsp3.o):
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_sid.o                 src/paw_sid.s(134)
+    paw_ui.o                  src/paw_ui.s(763)
+decsp4 (decsp4.o):
+    lpush.o                   runtime/lpush.s(12)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_memory.o              src/paw_memory.s(72)
+decsp5 (decsp5.o):
+    paw_files.o               src/paw_files.s(1083)
+decsp6 (decsp6.o):
+    _printf.o                 common/_printf.s(11)
+    paw_dtmf.o                src/paw_dtmf.s(320)
+decsp7 (decsp7.o):
+    paw_commands.o            src/paw_commands.s(1316)
+donelib (condes.o):
+    crt0.o                    c64/crt0.s(8)
+enter (enter.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+gotoxy (gotoxy.o):
+    cputs.o                   conio/cputs.s(9)
+    cputc.o                   c64/cputc.s(10)
+incax1 (incax1.o):
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+incax3 (incax3.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+incax4 (incaxy.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+incax5 (incax5.o):
+    paw_commands.o            src/paw_commands.s(1316)
+incax7 (incax7.o):
+    paw_commands.o            src/paw_commands.s(1316)
+incaxy (incaxy.o):
+    incax7.o                  runtime/incax7.s(8)
+    incax5.o                  runtime/incax5.s(8)
+    incax3.o                  runtime/incax3.s(8)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+incsp1 (incsp1.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_dtmf.o                src/paw_dtmf.s(320)
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+incsp2 (incsp2.o):
+    staxspi.o                 runtime/staxspi.s(9)
+    staspidx.o                runtime/staspidx.s(8)
+    popptr1.o                 runtime/popptr1.s(8)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_phone.o               src/paw_phone.s(303)
+    paw_ui.o                  src/paw_ui.s(763)
+incsp3 (incsp3.o):
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_phone.o               src/paw_phone.s(303)
+    paw_sid.o                 src/paw_sid.s(134)
+incsp4 (incsp4.o):
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_dtmf.o                src/paw_dtmf.s(320)
+    paw_memory.o              src/paw_memory.s(72)
+    paw_ui.o                  src/paw_ui.s(763)
+incsp5 (incsp5.o):
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+incsp6 (incsp6.o):
+    paw_disk.o                src/paw_disk.s(1132)
+incsp7 (incsp7.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+initlib (condes.o):
+    crt0.o                    c64/crt0.s(8)
+ldax0sp (ldaxsp.o):
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_phone.o               src/paw_phone.s(303)
+ldaxi (ldaxi.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_dtmf.o                src/paw_dtmf.s(320)
+    paw_sid.o                 src/paw_sid.s(134)
+ldaxysp (ldaxsp.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_phone.o               src/paw_phone.s(303)
+    paw_dtmf.o                src/paw_dtmf.s(320)
+    paw_dtmf.o                src/paw_dtmf.s(320)
+leaa0sp (leaaxsp.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    main.o                    src/main.s(139)
+leavey (leave.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+mulax10 (mulax10.o):
+    paw_disk.o                src/paw_disk.s(1132)
+negeax (lneg.o):
+    ltoa.o                    common/ltoa.s(9)
+plot (cputc.o):
+    gotoxy.o                  cbm/gotoxy.s(8)
+popa (popa.o):
+    c_setlfs.o                cbm/c_setlfs.s(12)
+    gotoxy.o                  cbm/gotoxy.s(8)
+    cbm_read.o                cbm/cbm_read.s(43)
+    cbm_open.o                cbm/cbm_open.s(22)
+popax (incsp2.o):
+    ltoa.o                    common/ltoa.s(9)
+    _printf.o                 common/_printf.s(11)
+    vcprintf.o                conio/vcprintf.s(8)
+    strncpy.o                 common/strncpy.s(8)
+    strncmp.o                 common/strncmp.s(8)
+    strcpy.o                  common/strcpy.s(8)
+    strchr.o                  common/strchr.s(9)
+    shl.o                     runtime/shl.s(15)
+    memcpy.o                  common/memcpy.s(14)
+    cbm_read.o                cbm/cbm_read.s(43)
+popptr1 (popptr1.o):
+    udiv.o                    runtime/udiv.s(9)
+    ltoa.o                    common/ltoa.s(9)
+    vcprintf.o                conio/vcprintf.s(8)
+    umod.o                    runtime/umod.s(8)
+    strncpy.o                 common/strncpy.s(8)
+    strncmp.o                 common/strncmp.s(8)
+    strcmp.o                  common/strcmp.s(8)
+    mul8.o                    runtime/mul8.s(9)
+    memcpy.o                  common/memcpy.s(14)
+ptr1 (zeropage.o):
+    udiv.o                    runtime/udiv.s(10)
+    strlower.o                common/strlower.s(13)
+    ltoa.o                    common/ltoa.s(11)
+    c_setnam.o                cbm/c_setnam.s(10)
+    _printf.o                 /build/cc65-MvQrHe/cc65-2.19/asminc/zeropage.inc(12)
+    zerobss.o                 common/zerobss.s(9)
+    vcprintf.o                conio/vcprintf.s(10)
+    strncpy.o                 common/strncpy.s(9)
+    strncmp.o                 common/strncmp.s(9)
+    strcpy.o                  common/strcpy.s(9)
+    strcmp.o                  common/strcmp.s(9)
+    strchr.o                  common/strchr.s(10)
+    staxspi.o                 runtime/staxspi.s(10)
+    staspidx.o                runtime/staspidx.s(9)
+    pushw.o                   runtime/pushw.s(9)
+    popptr1.o                 runtime/popptr1.s(9)
+    mulax10.o                 runtime/mulax10.s(9)
+    mul8.o                    runtime/mul8.s(10)
+    memcpy.o                  common/memcpy.s(15)
+    ldaxi.o                   runtime/ldaxi.s(8)
+    cputs.o                   conio/cputs.s(10)
+    cprintf.o                 conio/cprintf.s(9)
+    cbm_read.o                cbm/cbm_read.s(42)
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(11)
+    _heapmemavail.o           common/_heapmemavail.s(10)
+    _heapmaxavail.o           common/_heapmaxavail.s(10)
+    paw_commands.o            src/paw_commands.s(11)
+    paw_files.o               src/paw_files.s(11)
+    paw_disk.o                src/paw_disk.s(11)
+    paw_synth.o               src/paw_synth.s(11)
+    paw_dtmf.o                src/paw_dtmf.s(11)
+    main.o                    src/main.s(11)
+ptr2 (zeropage.o):
+    strlower.o                common/strlower.s(13)
+    ltoa.o                    common/ltoa.s(11)
+    _printf.o                 /build/cc65-MvQrHe/cc65-2.19/asminc/zeropage.inc(12)
+    vcprintf.o                conio/vcprintf.s(10)
+    strncpy.o                 common/strncpy.s(9)
+    strncmp.o                 common/strncmp.s(9)
+    strlen.o                  common/strlen.s(12)
+    strcpy.o                  common/strcpy.s(9)
+    strcmp.o                  common/strcmp.s(9)
+    memcpy.o                  common/memcpy.s(15)
+    cbm_read.o                cbm/cbm_read.s(42)
+    _heapmemavail.o           common/_heapmemavail.s(10)
+    _heapmaxavail.o           common/_heapmaxavail.s(10)
+ptr3 (zeropage.o):
+    ltoa.o                    common/ltoa.s(11)
+    vcprintf.o                conio/vcprintf.s(10)
+    strncmp.o                 common/strncmp.s(9)
+    memcpy.o                  common/memcpy.s(15)
+    cbm_read.o                cbm/cbm_read.s(42)
+ptr4 (zeropage.o):
+    udiv.o                    runtime/udiv.s(10)
+    umod.o                    runtime/umod.s(9)
+    mul8.o                    runtime/mul8.s(10)
+push1 (push1.o):
+    _printf.o                 common/_printf.s(11)
+pusha (pusha.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_phone.o               src/paw_phone.s(303)
+    paw_phone.o               src/paw_phone.s(303)
+    paw_phone.o               src/paw_phone.s(303)
+    paw_phone.o               src/paw_phone.s(303)
+    paw_phone.o               src/paw_phone.s(303)
+    paw_dtmf.o                src/paw_dtmf.s(320)
+    paw_dtmf.o                src/paw_dtmf.s(320)
+    paw_memory.o              src/paw_memory.s(72)
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+    main.o                    src/main.s(139)
+pusha0 (pushax.o):
+    push1.o                   runtime/push1.s(8)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+pushax (pushax.o):
+    callmain.o                runtime/callmain.s(11)
+    _printf.o                 common/_printf.s(11)
+    vcprintf.o                conio/vcprintf.s(8)
+    pushw.o                   runtime/pushw.s(8)
+    cprintf.o                 conio/cprintf.s(8)
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_phone.o               src/paw_phone.s(303)
+    paw_phone.o               src/paw_phone.s(303)
+    paw_dtmf.o                src/paw_dtmf.s(320)
+    paw_memory.o              src/paw_memory.s(72)
+    paw_ui.o                  src/paw_ui.s(763)
+pusheax (lpush.o):
+    _printf.o                 common/_printf.s(11)
+pushw0sp (pushwsp.o):
+    paw_commands.o            src/paw_commands.s(1316)
+pushwidx (pushw.o):
+    paw_files.o               src/paw_files.s(1083)
+pushwysp (pushwsp.o):
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_phone.o               src/paw_phone.s(303)
+    paw_memory.o              src/paw_memory.s(72)
+regbank (zeropage.o):
+    _printf.o                 /build/cc65-MvQrHe/cc65-2.19/asminc/zeropage.inc(14)
+    regswap2.o                runtime/regswap2.s(8)
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(10)
+regsave (zeropage.o):
+    paw_commands.o            src/paw_commands.s(10)
+    paw_disk.o                src/paw_disk.s(10)
+regswap2 (regswap2.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+sp (zeropage.o):
+    lpush.o                   runtime/lpush.s(13)
+    _printf.o                 /build/cc65-MvQrHe/cc65-2.19/asminc/zeropage.inc(11)
+    _heap.o                   common/_heap.s(9)
+    vcprintf.o                conio/vcprintf.s(10)
+    subysp.o                  runtime/subysp.s(9)
+    subeqsp.o                 runtime/subeqsp.s(8)
+    staxspi.o                 runtime/staxspi.s(10)
+    staxsp.o                  runtime/staxsp.s(8)
+    staspidx.o                runtime/staspidx.s(9)
+    regswap2.o                runtime/regswap2.s(8)
+    pushwsp.o                 runtime/pushwsp.s(8)
+    pushax.o                  runtime/pushax.s(8)
+    pusha.o                   runtime/pusha.s(8)
+    popptr1.o                 runtime/popptr1.s(9)
+    popa.o                    runtime/popa.s(8)
+    or.o                      runtime/or.s(10)
+    memcpy.o                  common/memcpy.s(15)
+    leave.o                   runtime/leave.s(15)
+    leaaxsp.o                 runtime/leaaxsp.s(8)
+    ldaxsp.o                  runtime/ldaxsp.s(8)
+    incsp2.o                  runtime/incsp2.s(8)
+    incsp1.o                  runtime/incsp1.s(8)
+    icmp.o                    runtime/icmp.s(9)
+    enter.o                   runtime/enter.s(8)
+    decsp7.o                  runtime/decsp7.s(8)
+    decsp6.o                  runtime/decsp6.s(8)
+    decsp5.o                  runtime/decsp5.s(8)
+    decsp4.o                  runtime/decsp4.s(8)
+    decsp3.o                  runtime/decsp3.s(8)
+    decsp2.o                  runtime/decsp2.s(8)
+    decsp1.o                  runtime/decsp1.s(8)
+    crt0.o                    /build/cc65-MvQrHe/cc65-2.19/asminc/zeropage.inc(11)
+    cprintf.o                 conio/cprintf.s(9)
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(10)
+    addysp.o                  runtime/addysp.s(8)
+    addeqsp.o                 runtime/addeqsp.s(8)
+    add.o                     runtime/add.s(12)
+    paw_commands.o            src/paw_commands.s(10)
+    paw_files.o               src/paw_files.s(10)
+    paw_disk.o                src/paw_disk.s(10)
+    paw_synth.o               src/paw_synth.s(10)
+    paw_phone.o               src/paw_phone.s(10)
+    paw_dtmf.o                src/paw_dtmf.s(10)
+    paw_sid.o                 src/paw_sid.s(10)
+    paw_ui.o                  src/paw_ui.s(10)
+    main.o                    src/main.s(10)
+sreg (zeropage.o):
+    lneg.o                    runtime/lneg.s(11)
+    udiv.o                    runtime/udiv.s(10)
+    ltoa.o                    common/ltoa.s(11)
+    lpush.o                   runtime/lpush.s(13)
+    axlong.o                  runtime/axlong.s(9)
+    _printf.o                 /build/cc65-MvQrHe/cc65-2.19/asminc/zeropage.inc(11)
+    umod.o                    runtime/umod.s(9)
+    icmp.o                    runtime/icmp.s(9)
+    paw_disk.o                src/paw_disk.s(10)
+staspidx (staspidx.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_ui.o                  src/paw_ui.s(763)
+stax0sp (staxsp.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_memory.o              src/paw_memory.s(72)
+staxspidx (staxspi.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+staxysp (staxsp.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    paw_dtmf.o                src/paw_dtmf.s(320)
+    paw_memory.o              src/paw_memory.s(72)
+subeqysp (subeqsp.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+    paw_disk.o                src/paw_disk.s(1132)
+subysp (subysp.o):
+    paw_commands.o            src/paw_commands.s(1316)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+    main.o                    src/main.s(139)
+tmp1 (zeropage.o):
+    ltoa.o                    common/ltoa.s(11)
+    c_setlfs.o                cbm/c_setlfs.s(13)
+    _printf.o                 /build/cc65-MvQrHe/cc65-2.19/asminc/zeropage.inc(13)
+    vcprintf.o                conio/vcprintf.s(10)
+    strncpy.o                 common/strncpy.s(9)
+    strchr.o                  common/strchr.s(10)
+    staxspi.o                 runtime/staxspi.s(10)
+    staspidx.o                runtime/staspidx.s(9)
+    shl.o                     runtime/shl.s(16)
+    or.o                      runtime/or.s(10)
+    incaxy.o                  runtime/incaxy.s(8)
+    decaxy.o                  runtime/decaxy.s(8)
+    cputs.o                   conio/cputs.s(10)
+    cbm_read.o                cbm/cbm_read.s(42)
+    add.o                     runtime/add.s(12)
+tmp2 (zeropage.o):
+    strncpy.o                 common/strncpy.s(9)
+tmp3 (zeropage.o):
+    strncpy.o                 common/strncpy.s(9)
+tosaddax (add.o):
+    paw_disk.o                src/paw_disk.s(1132)
+tosicmp0 (icmp.o):
+    paw_ui.o                  src/paw_ui.s(763)
+    paw_ui.o                  src/paw_ui.s(763)
+tosmula0 (mul8.o):
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_files.o               src/paw_files.s(1083)
+    paw_disk.o                src/paw_disk.s(1132)
+    paw_synth.o               src/paw_synth.s(1561)
+tosorax (or.o):
+    cbm_dir.o                 ../libwrk/c64/cbm_dir.s(374)
+tosumoda0 (umod.o):
+    paw_synth.o               src/paw_synth.s(1561)
+udiv16 (udiv.o):
+    umod.o                    runtime/umod.s(8)
+zerobss (zerobss.o):
+    crt0.o                    c64/crt0.s(9)
+

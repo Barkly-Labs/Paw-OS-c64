@@ -4,6 +4,112 @@
 #include "paw_hw.h"
 #include "paw.h"
 
+/*
+ * PAW OS puppy paw sprite
+ *
+ * Sprite data: $0340-$037F
+ * Sprite pointer: $07F8
+ * Sprite number: 0
+ *
+ * Uses the cassette buffer. Do not use cassette routines
+ * while this sprite allocation is active.
+ */
+
+#define VIC_SPR0_X       (*(volatile unsigned char*)0xD000)
+#define VIC_SPR0_Y       (*(volatile unsigned char*)0xD001)
+#define VIC_SPR_X_MSB    (*(volatile unsigned char*)0xD010)
+#define VIC_SPR_ENABLE   (*(volatile unsigned char*)0xD015)
+#define VIC_SPR_Y_EXP    (*(volatile unsigned char*)0xD017)
+#define VIC_SPR_PRIORITY (*(volatile unsigned char*)0xD01B)
+#define VIC_SPR_MULTICOL (*(volatile unsigned char*)0xD01C)
+#define VIC_SPR_X_EXP    (*(volatile unsigned char*)0xD01D)
+
+#define VIC_SPR_MC0      (*(volatile unsigned char*)0xD025)
+#define VIC_SPR_MC1      (*(volatile unsigned char*)0xD026)
+#define VIC_SPR0_COLOR   (*(volatile unsigned char*)0xD027)
+
+#define VIC_SPR0_POINTER (*(volatile unsigned char*)0x07F8)
+
+#define PAW_SPRITE_RAM ((volatile unsigned char*)0x0340)
+
+static const unsigned char paw_sprite_data[64] = {
+    /* Four pink toe beans with purple edging */
+    0x03, 0xF3, 0xF0,
+    0x03, 0x7F, 0x70,
+    0xFF, 0x5D, 0x7F,
+    0xDF, 0x5D, 0x7D,
+    0xD7, 0x7F, 0x75,
+    0xD7, 0xF3, 0xF5,
+    0xDF, 0x00, 0x3D,
+    0xFC, 0x00, 0x0F,
+
+    /* Golden central pad */
+    0x0F, 0xFF, 0xF0,
+    0x3E, 0xAA, 0xBC,
+    0x3A, 0xAA, 0xAC,
+    0x3A, 0xAA, 0xAC,
+    0x3A, 0xAA, 0xAC,
+    0x3A, 0xAA, 0xAC,
+    0x3A, 0xAA, 0xAC,
+    0x3A, 0xAA, 0xAC,
+    0x3A, 0xAA, 0xAC,
+    0x3E, 0xAA, 0xBC,
+    0x0E, 0xAA, 0xB0,
+    0x0F, 0xAA, 0xF0,
+    0x03, 0xEB, 0xC0,
+
+    /* Required 64th byte */
+    0x00
+};
+
+void paw_sprite_show(void)
+{
+    unsigned char i;
+
+    /* Copy sprite graphics into VIC-II accessible RAM */
+    for (i = 0; i < 64; ++i) {
+        PAW_SPRITE_RAM[i] = paw_sprite_data[i];
+    }
+
+    /* Sprite 0 points to $0340 / 64 = 13 */
+    VIC_SPR0_POINTER = 13;
+
+    /* Multicolor: pink, purple outline, golden pad */
+    VIC_SPR_MC0 = 10;
+    VIC_SPR_MC1 = 4;
+    VIC_SPR0_COLOR = 7;
+
+    /* Position near the upper-right corner */
+    VIC_SPR0_X = 250;
+    VIC_SPR0_Y = 70;
+
+    /* Keep X position below 256 */
+    VIC_SPR_X_MSB &= 0xFE;
+
+    /* Double the sprite's width and height */
+    VIC_SPR_X_EXP |= 0x01;
+    VIC_SPR_Y_EXP |= 0x01;
+
+    /* Enable multicolor mode */
+    VIC_SPR_MULTICOL |= 0x01;
+
+    /* Draw in front of text */
+    VIC_SPR_PRIORITY &= 0xFE;
+
+    /* Enable sprite 0 */
+    VIC_SPR_ENABLE |= 0x01;
+}
+
+void paw_sprite_hide(unsigned char sprite)
+{
+    VIC_SPR_ENABLE &= ~(1 << sprite);
+}
+
+void paw_sprites_clear(void)
+{
+    VIC_SPR_ENABLE = 0;
+}
+
 static const unsigned char rainbow_colors[8] = {
     COLOR_RED, COLOR_ORANGE, COLOR_YELLOW, COLOR_GREEN,
     COLOR_CYAN, COLOR_BLUE, COLOR_PURPLE, COLOR_LIGHTRED
@@ -66,38 +172,6 @@ void rainbow(void)
 
 
 
-
-void paw_logo(void)
-{
-    /* Four toe pads */
-    textcolor(COLOR_LIGHTRED);
-
-    gotoxy(25, 2);
-    cputs("  /\\     /\\");
-
-    gotoxy(24, 3);
-    cputs(" /  \\   /  \\");
-
-    gotoxy(24, 4);
-    cputs(" \\__/   \\__/");
-
-    /* Large central paw pad */
-    textcolor(COLOR_YELLOW);
-
-    gotoxy(26, 5);
-    cputs("  .----.");
-
-    gotoxy(25, 6);
-    cputs(" /      \\");
-
-    gotoxy(25, 7);
-    cputs("|        |");
-
-    gotoxy(26, 8);
-    cputs(" \\______/");
-}
-
-
 void clear_output(void)
 {
     unsigned char row;
@@ -114,8 +188,8 @@ void show_help(void)
 {
     clrscr();
 
-    paw_logo();
     rainbow();
+    paw_sprite_show();
 
     textcolor(COLOR_LIGHTRED);
     gotoxy(16, 11);
@@ -142,8 +216,9 @@ void show_about(void)
     BACKGROUND = COLOR_BLACK;
 
     /* Reuse the same paw and rainbow renderers as the PAW OS boot screen. */
-    paw_logo();
+
     rainbow();
+    paw_sprite_show();
 
     /* Keep the About copy below the shared eight-row brand header. */
     textcolor(COLOR_LIGHTRED);
@@ -188,7 +263,7 @@ static void draw_home_screen(unsigned char animate)
     BORDER = COLOR_PURPLE;
     BACKGROUND = COLOR_BLACK;
 
-    paw_logo();
+    paw_sprite_show();
     textcolor(COLOR_CYAN);
     gotoxy(2, 12);
     cputs("PAW OS STARTING...");

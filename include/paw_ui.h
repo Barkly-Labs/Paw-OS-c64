@@ -8,5 +8,5 @@ void show_about(void);
 void boot_screen(void);
 void draw_screen(void);
 void clear_output(void);
-
+void paw_sprites_clear(void);
 #endif
