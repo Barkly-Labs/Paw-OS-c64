@@ -3,6 +3,7 @@
 #include <cbm.h>
 #include "paw_hw.h"
 #include "paw.h"
+#include "paw_sid.h"
 
 /*
  * PAW OS puppy paw sprite
@@ -293,6 +294,8 @@ static void draw_home_screen(unsigned char animate)
 
     gotoxy(2, 24);
     cputs("PAW>");
+    play_midi_sid();
+
 }
 
 /* PAW RADIO FULL-SCREEN MODULE */
@@ -300,7 +303,8 @@ static void draw_home_screen(unsigned char animate)
  void draw_radio_screen(void)
 {
     clrscr();
-
+    paw_sprites_clear();
+    
     BORDER = COLOR_PURPLE;
     BACKGROUND = COLOR_BLACK;
 
